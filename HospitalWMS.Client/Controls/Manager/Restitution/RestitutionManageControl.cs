@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Manager.Restitution
 {
-    public partial class RestitutionManageControl : UserControl
+    public partial class RestitutionManageControl : BaseDataControl
     {
         public RestitutionManageControl()
         {
             InitializeComponent();
         }
 
-        public void FreshData()
+        public override void FreshData()
         {
             var query = Service.Common.db.Queryable<Model.Entities.Restitution>()
                 .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.approver, x => x.approverid).ToList()

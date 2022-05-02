@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Manager.Purchase
 {
-    public partial class PurchaseManageControl : UserControl
+    public partial class PurchaseManageControl : BaseDataControl
     {
         public PurchaseManageControl()
         {
             InitializeComponent();
         }
 
-        public void FreshData()
+        public override void FreshData()
         {
             var query = Service.Common.db.Queryable<Model.Entities.Order>()
                 .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.perchaser, x => x.purchaserid).ToList()

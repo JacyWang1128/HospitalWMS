@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Admin
 {
-    public partial class UserManageControl : UserControl
+    public partial class UserManageControl : BaseDataControl
     {
         public UserManageControl()
         {
             InitializeComponent();
         }
 
-        public void FreshData()
+        public override void FreshData()
         {
             var te = Service.Common.db.Queryable<Model.Entities.User>().ToList();
             //var temp = Service.Common.db.Queryable<User, Department>((u, d) => u.departmentid == d.id)
@@ -37,7 +37,7 @@ namespace HospitalWMS.Client.Controls.Admin
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var deptid = Service.Common.db.Queryable<Department>().First(x => x.name == cbxDept.SelectedValue).id;
+            var deptid = Service.Common.db.Queryable<Department>().First(x => x.name == cbxDept.SelectedValue.ToString()).id;
             var role = cbxRole.SelectedIndex;
             var entity = new Model.Entities.User()
             {
@@ -81,7 +81,7 @@ namespace HospitalWMS.Client.Controls.Admin
                 if(Convert.ToInt64(dgvUser.SelectedRows[0].Cells["编号"].Value) == Service.Common.currentUser.id && fiPassword.Value.ToSHA() != Service.Common.currentUser.password)
                     isChangeSelfPassword = true;
                 var entity = Service.Common.db.Queryable<Model.Entities.User>().First(x => x.id == Convert.ToInt64(dgvUser.SelectedRows[0].Cells["编号"].Value));
-                var deptid = Service.Common.db.Queryable<Department>().First(x => x.name == cbxDept.SelectedValue).id;
+                var deptid = Service.Common.db.Queryable<Department>().First(x => x.name == cbxDept.SelectedValue.ToString()).id;
                 var role = cbxRole.SelectedIndex;
                 entity.username = fiUsername.Value;
                 entity.password = fiPassword.Value.ToSHA();

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.User
 {
-    public partial class RestitutionControl : UserControl
+    public partial class RestitutionControl : BaseDataControl
     {
         public RestitutionControl()
         {
@@ -49,7 +49,7 @@ namespace HospitalWMS.Client.Controls.User
             cbGoods.DataSource = Service.Common.db.Queryable<Model.Entities.Goods>().ToDataTable();
             cbGoods.DisplayMember = "name";
         }
-        public void FreshData()
+        public override void FreshData()
         {
             FreshItems();
             FreshApply();

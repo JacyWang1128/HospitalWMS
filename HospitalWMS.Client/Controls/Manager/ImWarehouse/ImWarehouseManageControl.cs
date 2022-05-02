@@ -12,18 +12,18 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
 {
-    public partial class ImWarehouseManageControl : UserControl
+    public partial class ImWarehouseManageControl : BaseDataControl
     {
         public ImWarehouseManageControl()
         {
             InitializeComponent();
         }
 
-        public void FreshData()
+        public override void FreshData()
         {
             var query = Service.Common.db.Queryable<Model.Entities.ImWarehouse>()
                 .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.approver, x => x.approverid).ToList()
-                .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier.displayname, 申请时间 = x.applytime, 审核人 = x.approver.displayname, 审核结果 = x.result })
+                .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier.displayname, 申请时间 = x.applytime, 审核人 = x.approver.displayname, 审核状态 = x.result })
                 .ToList();
             dgvImWarehouse.DataSource = query;
             dgvItem.DataSource = null;

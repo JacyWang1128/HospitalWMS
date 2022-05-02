@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Manager.Supplier
 {
-    public partial class SupplierManageControl : UserControl
+    public partial class SupplierManageControl : BaseDataControl
     {
         public SupplierManageControl()
         {
             InitializeComponent();
         }
-        public void FreshData()
+        public override void FreshData()
         {
             dgvSupplier.DataSource = Service.Common.db.Queryable<Model.Entities.Supplier>().ToList().Select(x => new { 编号 = x.id, 名称 = x.name, 合同到期时间 = x.expire, 所属仓库 = string.IsNullOrWhiteSpace(x.warehouseids) ? "所有" : x.warehouseids }).ToList();
         }

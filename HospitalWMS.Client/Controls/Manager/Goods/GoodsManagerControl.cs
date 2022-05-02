@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Manager.Goods
 {
-    public partial class GoodsManagerControl : UserControl
+    public partial class GoodsManagerControl : BaseDataControl
     {
         public GoodsManagerControl()
         {
             InitializeComponent();
         }
 
-        public void FreshData()
+        public override void FreshData()
         {
             var temp = Service.Common.db.Queryable<Model.Entities.Goods>()
                 .Mapper(x => x.specification, x => x.specificationid)

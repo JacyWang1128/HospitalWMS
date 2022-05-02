@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
 {
-    public partial class ExWarehouseManageControl : UserControl
+    public partial class ExWarehouseManageControl : BaseDataControl
     {
         public ExWarehouseManageControl()
         {
             InitializeComponent();
         }
 
-        public void FreshData()
+        public override void FreshData()
         {
             var query = Service.Common.db.Queryable<Model.Entities.ExWarehouse>()
                 .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.approver, x => x.approverid).ToList()

@@ -12,11 +12,16 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Manager.Goods
 {
-    public partial class StockManageControl : UserControl
+    public partial class StockManageControl : BaseDataControl
     {
         public StockManageControl()
         {
             InitializeComponent();
+        }
+
+        public override void FreshData()
+        {
+            FreshData(false);
         }
 
         public void FreshData(bool isFilter = false)

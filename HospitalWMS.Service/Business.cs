@@ -67,7 +67,7 @@ namespace HospitalWMS.Service
             T t = Common.db.Queryable<T>().First(x => x.id == id);
             if (t == null)
                 return false;
-            t.GetType().GetProperty("result").SetValue(t, ApplyResult.同意);
+            t.GetType().GetProperty("result").SetValue(t, ApplyResult.审核通过);
             if (t.GetType() == typeof(Order))
             {
                 t.GetType().GetProperty("purchaserid").SetValue(t, Common.currentUser.id);
@@ -85,7 +85,7 @@ namespace HospitalWMS.Service
             T t = Common.db.Queryable<T>().First(x => x.id == id);
             if (t == null)
                 return false;
-            t.GetType().GetProperty("result").SetValue(t, ApplyResult.撤回);
+            t.GetType().GetProperty("result").SetValue(t, ApplyResult.未审批);
             if (t.GetType() == typeof(Order))
                 t.GetType().GetProperty("purchaserid").SetValue(t, Common.currentUser.id);
             else

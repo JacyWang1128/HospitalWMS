@@ -9,7 +9,7 @@ namespace HospitalWMS.Model.Enums
     public enum ApplyResult
     {
         未审批 = 0,
-        同意 = 1,
-        撤回 = 2
+        审核通过 = 1,
+        审核不通过 = 2
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Manager.Purchase
 {
-    public partial class ApplyPurchaseControl : UserControl
+    public partial class ApplyPurchaseControl : BaseDataControl
     {
         public ApplyPurchaseControl()
         {
@@ -51,7 +51,7 @@ namespace HospitalWMS.Client.Controls.Manager.Purchase
             cbGoods.DataSource = Service.Common.db.Queryable<Model.Entities.Goods>().ToDataTable();
             cbGoods.DisplayMember = "name";
         }
-        public void FreshData()
+        public override void FreshData()
         {
             FreshItems();
             FreshApply();

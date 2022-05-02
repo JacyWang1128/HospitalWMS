@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
 {
-    public partial class ApplyExWarehouseControl : UserControl
+    public partial class ApplyExWarehouseControl : BaseDataControl
     {
         public ApplyExWarehouseControl()
         {
@@ -49,7 +49,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             cbGoods.DataSource = Service.Common.db.Queryable<Model.Entities.Goods>().ToDataTable();
             cbGoods.DisplayMember = "name";
         }
-        public void FreshData()
+        public override void FreshData()
         {
             FreshItems();
             FreshApply();

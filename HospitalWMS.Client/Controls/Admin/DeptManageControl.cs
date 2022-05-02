@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls.Admin
 {
-    public partial class DeptManageControl : UserControl
+    public partial class DeptManageControl : BaseDataControl
     {
         public DeptManageControl()
         {
             InitializeComponent();
         }
-        public void FreshData()
+        public override void FreshData()
         {
             dgvDept.DataSource = Service.Common.db.Queryable<Department>().Select(x => new { 编号 = x.id, 名称 = x.name}).ToDataTable();
         }
