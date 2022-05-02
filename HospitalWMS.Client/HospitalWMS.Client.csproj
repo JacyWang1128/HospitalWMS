@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2AF27159-90D3-43F8-AA02-C6A3B59886E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HospitalWMS.Client</RootNamespace>
+    <AssemblyName>HospitalWMS.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BSE.Windows.Forms.1.0.0\lib\BSE.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar, Version=5.0.3.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="SunnyUI, Version=3.1.8.0, Culture=neutral, PublicKeyToken=27d7d2e821d97aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.3.1.8\lib\net40\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI.Common, Version=3.1.2.0, Culture=neutral, PublicKeyToken=5a271fb7ba597231, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.Common.3.1.2\lib\net40\SunnyUI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Admin\AdminMainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminMainControl.Designer.cs">
+      <DependentUpon>AdminMainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Admin\DeptManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\DeptManageControl.Designer.cs">
+      <DependentUpon>DeptManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Admin\UserManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\UserManageControl.Designer.cs">
+      <DependentUpon>UserManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Admin\WarehouseManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\WarehouseManageControl.Designer.cs">
+      <DependentUpon>WarehouseManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseDataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseDataControl.Designer.cs">
+      <DependentUpon>BaseDataControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChangePasswordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ChangePasswordControl.Designer.cs">
+      <DependentUpon>ChangePasswordControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FiledComboControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FiledComboControl.Designer.cs">
+      <DependentUpon>FiledComboControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FiledInputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FiledInputControl.Designer.cs">
+      <DependentUpon>FiledInputControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\Apply\ApplyManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\Apply\ApplyManageControl.Designer.cs">
+      <DependentUpon>ApplyManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\ExWarehouse\ApplyExWarehouseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\ExWarehouse\ApplyExWarehouseControl.Designer.cs">
+      <DependentUpon>ApplyExWarehouseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\ExWarehouse\ExWarehouseManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\ExWarehouse\ExWarehouseManageControl.Designer.cs">
+      <DependentUpon>ExWarehouseManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\Goods\GoodsManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\Goods\GoodsManagerControl.Designer.cs">
+      <DependentUpon>GoodsManagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\Goods\SpecificationManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\Goods\SpecificationManageControl.Designer.cs">
+      <DependentUpon>SpecificationManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\Goods\StockManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\Goods\StockManageControl.Designer.cs">
+      <DependentUpon>StockManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\ImWarehouse\ApplyImWarehouseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\ImWarehouse\ApplyImWarehouseControl.Designer.cs">
+      <DependentUpon>ApplyImWarehouseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\ImWarehouse\ImWarehouseManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\ImWarehouse\ImWarehouseManageControl.Designer.cs">
+      <DependentUpon>ImWarehouseManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\ManageMainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\ManageMainControl.Designer.cs">
+      <DependentUpon>ManageMainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\Purchase\ApplyPurchaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\Purchase\ApplyPurchaseControl.Designer.cs">
+      <DependentUpon>ApplyPurchaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\Purchase\PurchaseManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\Purchase\PurchaseManageControl.Designer.cs">
+      <DependentUpon>PurchaseManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\Restitution\RestitutionManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\Restitution\RestitutionManageControl.Designer.cs">
+      <DependentUpon>RestitutionManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\Supplier\SupplierManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\Supplier\SupplierManageControl.Designer.cs">
+      <DependentUpon>SupplierManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserInfoControl.Designer.cs">
+      <DependentUpon>UserInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserInfoManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserInfoManageControl.Designer.cs">
+      <DependentUpon>UserInfoManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\ApplyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\User\ApplyControl.Designer.cs">
+      <DependentUpon>ApplyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\RestitutionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\User\RestitutionControl.Designer.cs">
+      <DependentUpon>RestitutionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\UserMainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\User\UserMainControl.Designer.cs">
+      <DependentUpon>UserMainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LoginControl.Designer.cs">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Admin\AdminMainControl.resx">
+      <DependentUpon>AdminMainControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Admin\DeptManageControl.resx">
+      <DependentUpon>DeptManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Admin\UserManageControl.resx">
+      <DependentUpon>UserManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Admin\WarehouseManageControl.resx">
+      <DependentUpon>WarehouseManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseDataControl.resx">
+      <DependentUpon>BaseDataControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ChangePasswordControl.resx">
+      <DependentUpon>ChangePasswordControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FiledComboControl.resx">
+      <DependentUpon>FiledComboControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FiledInputControl.resx">
+      <DependentUpon>FiledInputControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\Apply\ApplyManageControl.resx">
+      <DependentUpon>ApplyManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\ExWarehouse\ApplyExWarehouseControl.resx">
+      <DependentUpon>ApplyExWarehouseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\ExWarehouse\ExWarehouseManageControl.resx">
+      <DependentUpon>ExWarehouseManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\Goods\GoodsManagerControl.resx">
+      <DependentUpon>GoodsManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\Goods\SpecificationManageControl.resx">
+      <DependentUpon>SpecificationManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\Goods\StockManageControl.resx">
+      <DependentUpon>StockManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\ImWarehouse\ApplyImWarehouseControl.resx">
+      <DependentUpon>ApplyImWarehouseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\ImWarehouse\ImWarehouseManageControl.resx">
+      <DependentUpon>ImWarehouseManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\ManageMainControl.resx">
+      <DependentUpon>ManageMainControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\Purchase\ApplyPurchaseControl.resx">
+      <DependentUpon>ApplyPurchaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\Purchase\PurchaseManageControl.resx">
+      <DependentUpon>PurchaseManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\Restitution\RestitutionManageControl.resx">
+      <DependentUpon>RestitutionManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\Supplier\SupplierManageControl.resx">
+      <DependentUpon>SupplierManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserInfoControl.resx">
+      <DependentUpon>UserInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\User\ApplyControl.resx">
+      <DependentUpon>ApplyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\User\RestitutionControl.resx">
+      <DependentUpon>RestitutionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\User\UserMainControl.resx">
+      <DependentUpon>UserMainControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LoginControl.resx">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HospitalWMS.Model\HospitalWMS.Model.csproj">
+      <Project>{360e0d71-21a0-43a5-bdc5-db0f81afd880}</Project>
+      <Name>HospitalWMS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HospitalWMS.Runtime\HospitalWMS.Runtime.csproj">
+      <Project>{1893ecc5-50be-4ad1-a03b-bfbc1dcb8c8a}</Project>
+      <Name>HospitalWMS.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HospitalWMS.Service\HospitalWMS.Service.csproj">
+      <Project>{722d93c3-8fe5-4414-8fbd-9034dfa63b3f}</Project>
+      <Name>HospitalWMS.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

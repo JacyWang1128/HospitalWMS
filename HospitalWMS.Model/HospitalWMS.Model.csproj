@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{360E0D71-21A0-43A5-BDC5-DB0F81AFD880}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HospitalWMS.Model</RootNamespace>
+    <AssemblyName>HospitalWMS.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="SqlSugar, Version=5.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlSugar.5.0.3\lib\SqlSugar.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Apply.cs" />
+    <Compile Include="Entities\ApplyItem.cs" />
+    <Compile Include="Entities\Department.cs" />
+    <Compile Include="Entities\ExWarehouse.cs" />
+    <Compile Include="Entities\ExWarehouseItem.cs" />
+    <Compile Include="Entities\Goods.cs" />
+    <Compile Include="Entities\ImWarehouse.cs" />
+    <Compile Include="Entities\ImWarehouseItem.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderItem.cs" />
+    <Compile Include="Entities\Restitution.cs" />
+    <Compile Include="Entities\RestitutionItem.cs" />
+    <Compile Include="Entities\Specification.cs" />
+    <Compile Include="Entities\Stock.cs" />
+    <Compile Include="Entities\Supplier.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Warehouse.cs" />
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="Enums\ApplyResult.cs" />
+    <Compile Include="Enums\GoodsType.cs" />
+    <Compile Include="Enums\OrderState.cs" />
+    <Compile Include="Enums\UserType.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
