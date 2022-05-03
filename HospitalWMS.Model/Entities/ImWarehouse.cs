@@ -22,5 +22,8 @@ namespace HospitalWMS.Model.Entities
         public User approver { get; set; }
         [SugarColumn(IsIgnore = true)]
         public List<ImWarehouseItem> items { get; set; }
+        public long orderid { get; set; }
+        [SugarColumn(IsIgnore = true)]
+        public Order order { get; set; }
     }
 }

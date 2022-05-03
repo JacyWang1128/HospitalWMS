@@ -12,5 +12,8 @@ namespace HospitalWMS.Model.Entities
     {
         [SugarColumn(IsIgnore = true)]
         public new List<RestitutionItem> items { get; set; }
+        public long applyid { get; set; }
+        [SugarColumn(IsIgnore = true)]
+        public Apply apply { get; set; }
     }
 }

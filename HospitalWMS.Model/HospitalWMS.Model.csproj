@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="Entities\Apply.cs" />
     <Compile Include="Entities\ApplyItem.cs" />
+    <Compile Include="Entities\ApplyOrder.cs" />
+    <Compile Include="Entities\ApplyOrderItem.cs" />
     <Compile Include="Entities\Department.cs" />
     <Compile Include="Entities\ExWarehouse.cs" />
     <Compile Include="Entities\ExWarehouseItem.cs" />

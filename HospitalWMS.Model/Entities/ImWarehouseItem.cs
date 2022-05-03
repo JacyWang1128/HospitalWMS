@@ -18,7 +18,6 @@ namespace HospitalWMS.Model.Entities
         public Warehouse warehouse { get; set; }
         public int count { get; set; }
         public string applyid { get; set; }
-
         [SugarColumn(IsIgnore = true)]
         public ImWarehouse apply { get; set; }
         public int sort { get; set; }

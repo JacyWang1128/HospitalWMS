@@ -12,9 +12,9 @@ namespace HospitalWMS.Model.Entities
     public class Goods:EntityBase
     {
         public string name { get; set; }
-        public long specificationid { get; set; }
-        [SugarColumn(IsIgnore = true)]
-        public Specification specification { get; set; }
+        public string specification { get; set; }
+        //[SugarColumn(IsIgnore = true)]
+        //public Specification specification { get; set; }
         public GoodsType goodstype { get; set; }
         public decimal price { get; set; }
         public string unit { get; set; }

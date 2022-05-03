@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HospitalWMS.Client.Controls.Manager.Goods;
+using HospitalWMS.Client.Controls.Manager.Supplier;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,10 +20,11 @@ namespace HospitalWMS.Client.Controls.Admin
             {
                 if (_userMange == null)
                 {
-                    _userMange = new UserManageControl() { Dock = DockStyle.Fill };
+                    _userMange = new UserManageControl();
                 }
                 return _userMange;
             }
+            set => _userMange = value;
         }
 
         public DeptManageControl DeptMangeageControl
@@ -29,7 +32,7 @@ namespace HospitalWMS.Client.Controls.Admin
             get
             {
                 if (_deptMangeageControl == null)
-                    _deptMangeageControl = new DeptManageControl() { Dock = DockStyle.Fill };
+                    _deptMangeageControl = new DeptManageControl();
                 return _deptMangeageControl;
             }
             set => _deptMangeageControl = value;
@@ -40,16 +43,42 @@ namespace HospitalWMS.Client.Controls.Admin
             get
             {
                 if (_warehouseManageControl == null)
-                    _warehouseManageControl = new WarehouseManageControl() { Dock = DockStyle.Fill };
+                    _warehouseManageControl = new WarehouseManageControl();
                 return _warehouseManageControl;
             }
             set => _warehouseManageControl = value;
         }
+
+        public SupplierManageControl SupplierManageControl
+        {
+            get
+            {
+                if (_supplierManageControl == null)
+                    _supplierManageControl = new SupplierManageControl();
+                return _supplierManageControl;
+            }
+            set => _supplierManageControl = value;
+        }
+
+        public GoodsManagerControl GoodsManagerControl
+        {
+            get
+            {
+                if (_goodsManagerControl == null)
+                    _goodsManagerControl = new GoodsManagerControl();
+                return _goodsManagerControl;
+            }
+            set => _goodsManagerControl = value;
+        }
+
         private UserManageControl _userMange = null;
 
         private DeptManageControl _deptMangeageControl = null;
 
         private WarehouseManageControl _warehouseManageControl = null;
+
+        private SupplierManageControl _supplierManageControl = null;
+        private GoodsManagerControl _goodsManagerControl = null;
 
         public AdminMainControl()
         {
@@ -75,6 +104,40 @@ namespace HospitalWMS.Client.Controls.Admin
             uiPanel1.Controls.Clear();
             uiPanel1.Controls.Add(WarehouseManageControl);
             WarehouseManageControl.FreshData();
+        }
+
+        private void uiTreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Nodes.Count < 1)
+            {
+                switch (e.Node.Text)
+                {
+                    case "管理用户":
+                        FreshUI(UserMange);
+                        break;
+                    case "管理部门":
+                        FreshUI(DeptMangeageControl);
+                        break;
+                    case "管理仓库":
+                        FreshUI(WarehouseManageControl);
+                        break;
+                    case "管理供应商":
+                        FreshUI(SupplierManageControl);
+                        break;
+                    case "管理物资":
+                        FreshUI(GoodsManagerControl);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        private void FreshUI(BaseDataControl control)
+        {
+            uiPanel1.Controls.Clear();
+            uiPanel1.Controls.Add(control);
+            control.Dock = DockStyle.Fill;
+            control.FreshData();
         }
     }
 }

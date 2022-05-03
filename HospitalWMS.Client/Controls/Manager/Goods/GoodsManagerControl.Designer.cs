@@ -50,16 +50,13 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
             this.fiName = new HospitalWMS.Client.Controls.FiledInputControl();
             this.fiUnit = new HospitalWMS.Client.Controls.FiledInputControl();
             this.fiPrice = new HospitalWMS.Client.Controls.FiledInputControl();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbSpecification = new Sunny.UI.UIComboBox();
-            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.fiSpecification = new HospitalWMS.Client.Controls.FiledInputControl();
             this.uiTitlePanel1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.uiFlowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTitlePanel1
@@ -94,7 +91,7 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
             this.uiTableLayoutPanel1.Controls.Add(this.fiName, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.fiUnit, 0, 1);
             this.uiTableLayoutPanel1.Controls.Add(this.fiPrice, 1, 1);
-            this.uiTableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.fiSpecification, 1, 0);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(0, 35);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
@@ -338,44 +335,18 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
             this.fiPrice.Title = "价格";
             this.fiPrice.Value = "";
             // 
-            // panel1
+            // fiSpecification
             // 
-            this.panel1.Controls.Add(this.cbSpecification);
-            this.panel1.Controls.Add(this.uiLabel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(359, 8);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(345, 50);
-            this.panel1.TabIndex = 11;
-            // 
-            // cbSpecification
-            // 
-            this.cbSpecification.DataSource = null;
-            this.cbSpecification.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbSpecification.FillColor = System.Drawing.Color.White;
-            this.cbSpecification.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cbSpecification.Location = new System.Drawing.Point(116, 0);
-            this.cbSpecification.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbSpecification.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cbSpecification.Name = "cbSpecification";
-            this.cbSpecification.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.cbSpecification.Size = new System.Drawing.Size(229, 50);
-            this.cbSpecification.TabIndex = 1;
-            this.cbSpecification.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbSpecification.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel1.Location = new System.Drawing.Point(0, 0);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(116, 50);
-            this.uiLabel1.TabIndex = 0;
-            this.uiLabel1.Text = "规格";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiLabel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Lable_Paint);
+            this.fiSpecification.BackColor = System.Drawing.Color.Transparent;
+            this.fiSpecification.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fiSpecification.Location = new System.Drawing.Point(361, 10);
+            this.fiSpecification.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.fiSpecification.Name = "fiSpecification";
+            this.fiSpecification.PwdCharacter = '\0';
+            this.fiSpecification.Size = new System.Drawing.Size(341, 46);
+            this.fiSpecification.TabIndex = 15;
+            this.fiSpecification.Title = "规格型号";
+            this.fiSpecification.Value = "";
             // 
             // GoodsManagerControl
             // 
@@ -383,14 +354,12 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.uiTitlePanel1);
             this.Name = "GoodsManagerControl";
-            this.Size = new System.Drawing.Size(1064, 606);
             this.uiTitlePanel1.ResumeLayout(false);
             this.uiTableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.uiFlowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -407,13 +376,11 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
         private FiledInputControl fiPrice;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private Sunny.UI.UIComboBox cbSpecification;
-        private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UIComboBox cbGoodsType;
         private Sunny.UI.UIComboBox cbSupplier;
         private Sunny.UI.UILabel uiLabel3;
         private Sunny.UI.UIDataGridView dgvGoods;
+        private FiledInputControl fiSpecification;
     }
 }

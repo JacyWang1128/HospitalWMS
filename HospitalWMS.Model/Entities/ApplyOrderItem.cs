@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace HospitalWMS.Model.Entities
 {
-    [SugarTable("exwarehouse")]
-    public class ExWarehouse:ImWarehouse
+    [SugarTable("applyorderitem")]
+    public class ApplyOrderItem:ImWarehouseItem
     {
         [SugarColumn(IsIgnore = true)]
-        public new List<ExWarehouseItem> items { get; set; }
-        [SugarColumn(IsIgnore = true)]
-        public new Apply order { get; set; }
+        public new ApplyOrder apply { get; set; }
     }
 }

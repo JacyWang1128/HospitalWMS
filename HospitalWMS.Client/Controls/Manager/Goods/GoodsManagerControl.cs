@@ -22,14 +22,14 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
         public override void FreshData()
         {
             var temp = Service.Common.db.Queryable<Model.Entities.Goods>()
-                .Mapper(x => x.specification, x => x.specificationid)
+                //.Mapper(x => x.specification, x => x.specificationid)
                 .Mapper(x => x.supplier, x => x.supplierid).ToList()
-                .Select(x => new { 编号 = x.id, 物资名称 = x.name, 规格 = x.specification.name, 物资类型 = x.goodstype.ToString(), 单位 = x.unit, 价格 = x.price, 供应商 = x.supplier.name })
+                .Select(x => new { 编号 = x.id, 物资名称 = x.name, 规格 = x.specification, 物资类型 = x.goodstype.ToString(), 单位 = x.unit, 价格 = x.price, 供应商 = x.supplier.name })
                 .ToList();
             dgvGoods.DataSource = temp;
             cbGoodsType.DataSource = Enum.GetNames(typeof(GoodsType));
-            cbSpecification.DataSource = Service.Common.db.Queryable<Specification>().Select(x => new { x.id, x.name }).ToDataTable();
-            cbSpecification.DisplayMember = "name";
+            //cbSpecification.DataSource = Service.Common.db.Queryable<Specification>().Select(x => new { x.id, x.name }).ToDataTable();
+            //cbSpecification.DisplayMember = "name";
             cbSupplier.DataSource = Service.Common.db.Queryable<Model.Entities.Supplier>().Select(x => new { x.id, x.name }).ToDataTable();
             cbSupplier.DisplayMember = "name";
         }
@@ -38,7 +38,7 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
             entity.name = fiName.Value;
             entity.goodstype = (GoodsType)cbGoodsType.SelectedIndex;
             entity.price = Convert.ToDecimal(fiPrice.Value);
-            entity.specificationid = Convert.ToInt64((cbSpecification.SelectedItem as DataRowView).Row["id"]);
+            entity.specification = fiSpecification.Value;
             entity.supplierid = Convert.ToInt64((cbSupplier.SelectedItem as DataRowView).Row["id"]);
             entity.unit = fiUnit.Value;
             return entity;
