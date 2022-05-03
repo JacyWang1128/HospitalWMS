@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HospitalWMS.Client.Controls
 {
-    public partial class ChangePasswordControl : UserControl
+    public partial class ChangePasswordControl : BaseDataControl
     {
         public ChangePasswordControl()
         {

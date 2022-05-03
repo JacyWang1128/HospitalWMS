@@ -269,5 +269,50 @@ namespace HospitalWMS.Client.Controls.Manager
             uiPanel1.Controls.Add(RestitutionManageControl);
             RestitutionManageControl.FreshData();
         }
+
+        private void uiTreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if(e.Node.Nodes.Count < 1)
+            {
+                switch (e.Node.Text)
+                {
+                    case "审核申领":
+                        break;
+                    case "查询申领":
+                        break;
+                    case "审核退库":
+                        break;
+                    case "查询退库":
+                        break;
+                    case "申请入库":
+                        break;
+                    case "审核入库":
+                        break;
+                    case "查询入库":
+                        break;
+                    case "申请出库":
+                        break;
+                    case "审核出库":
+                        break;
+                    case "查询出库":
+                        break;
+                    case "查看库存":
+                        FreshUI(StockManageControl);
+                        break;
+                    case "修改个人信息":
+                        FreshUI(ChangePasswordControl);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        private void FreshUI(BaseDataControl control)
+        {
+            uiPanel1.Controls.Clear();
+            uiPanel1.Controls.Add(control);
+            control.Dock = DockStyle.Fill;
+            control.FreshData();
+        }
     }
 }
