@@ -24,7 +24,7 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
             FreshData(false);
         }
 
-        public void FreshData(bool isFilter = false)
+        public void FreshData(bool isFilter)
         {
             //var temp = Service.Common.db.Queryable<Stock>()
             //    .Mapper(x => x.warehouse, x => x.warehouseid)
@@ -51,10 +51,10 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
                         物资 = x.goods.name,
                         数量 = x.count,
                         单位 = x.goods.unit,
-                    //规格 = x.goods.specification.name,
-                    物资类型 = x.goods.goodstype.ToString(),
-                    //供应商 = x.goods.supplier.name,
-                    单价 = x.goods.price,
+                        //规格 = x.goods.specification.name,
+                        物资类型 = x.goods.goodstype.ToString(),
+                        //供应商 = x.goods.supplier.name,
+                        单价 = x.goods.price,
                         总价 = (decimal)x.count * x.goods.price
                     }).ToList();
                 dgvStock.DataSource = query;
@@ -71,10 +71,10 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
                            物资 = x.goods.name,
                            数量 = x.count,
                            单位 = x.goods.unit,
-                        //规格 = x.goods.specification.name,
-                        物资类型 = x.goods.goodstype.ToString(),
-                        //供应商 = x.goods.supplier.name,
-                        单价 = x.goods.price,
+                           //规格 = x.goods.specification.name,
+                           物资类型 = x.goods.goodstype.ToString(),
+                           //供应商 = x.goods.supplier.name,
+                           单价 = x.goods.price,
                            总价 = (decimal)x.count * x.goods.price
                        }).ToList();
                 dgvStock.DataSource = query;
@@ -97,10 +97,10 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
             cbWarehouse.DisplayMember = "name";
             cbGoods.DataSource = Service.Common.db.Queryable<Model.Entities.Goods>().ToDataTable();
             cbGoods.DisplayMember = "name";
-            cbSupplier.DataSource = Service.Common.db.Queryable<Model.Entities.Supplier>().ToDataTable();
-            cbSupplier.DisplayMember = "name";
-            cbSpecification.DataSource = Service.Common.db.Queryable<Model.Entities.Specification>().ToDataTable();
-            cbSpecification.DisplayMember = "name";
+            //cbSupplier.DataSource = Service.Common.db.Queryable<Model.Entities.Supplier>().ToDataTable();
+            //cbSupplier.DisplayMember = "name";
+            //cbSpecification.DataSource = Service.Common.db.Queryable<Model.Entities.Specification>().ToDataTable();
+            //cbSpecification.DisplayMember = "name";
             cbGoodsType.DataSource = Enum.GetNames(typeof(GoodsType));
         }
     }

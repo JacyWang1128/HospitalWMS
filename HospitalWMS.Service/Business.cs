@@ -27,6 +27,40 @@ namespace HospitalWMS.Service
             }
             return ret;
         }
+        public static bool CheckStock(List<Tuple<long, long, int>> items)
+        {
+            bool ret = items.Count == 0;
+            using (var db = Common.db)
+            {
+                db.BeginTran();
+                foreach (var item in items)
+                {
+                    long warehouseid = item.Item1;
+                    long goodsid = item.Item2;
+                    int count = item.Item3;
+                    var query = db.Queryable<Stock>().First(x => x.warehouseid == warehouseid && x.goodsid == goodsid);
+                    if (query == null)
+                    {
+                        db.RollbackTran();
+                        ret = false;
+                        break;
+                    }
+                    else
+                    {
+                        if (query.count < count)
+                        {
+                            db.RollbackTran();
+                            ret = false;
+                            break;
+                        }
+                        query.count -= count;
+                        ret = 1 == db.Updateable(query).ExecuteCommand();
+                    }
+                }
+                db.RollbackTran();
+            }
+            return ret;
+        }
         public static bool ExWarehouse(List<Tuple<long, long, int>> items)
         {
             bool ret = true;
@@ -43,6 +77,7 @@ namespace HospitalWMS.Service
                     {
                         db.RollbackTran();
                         ret = false;
+                        break;
                     }
                     else
                     {
@@ -75,7 +110,7 @@ namespace HospitalWMS.Service
             }
             else
                 t.GetType().GetProperty("approverid").SetValue(t, Common.currentUser.id);
-            t.GetType().GetProperty("applytime").SetValue(t, DateTime.Now);
+           // t.GetType().GetProperty("applytime").SetValue(t, DateTime.Now);
             ret = 1 == DAO.Update(t);
             return ret;
         }
@@ -85,14 +120,20 @@ namespace HospitalWMS.Service
             T t = Common.db.Queryable<T>().First(x => x.id == id);
             if (t == null)
                 return false;
-            t.GetType().GetProperty("result").SetValue(t, ApplyResult.未审批);
+            t.GetType().GetProperty("result").SetValue(t, ApplyResult.审核不通过);
             if (t.GetType() == typeof(Order))
                 t.GetType().GetProperty("purchaserid").SetValue(t, Common.currentUser.id);
             else
                 t.GetType().GetProperty("approverid").SetValue(t, Common.currentUser.id);
-            t.GetType().GetProperty("applytime").SetValue(t, DateTime.Now);
+            //t.GetType().GetProperty("applytime").SetValue(t, DateTime.Now);
             ret = 1 == DAO.Update(t);
             return ret;
+        }
+        public static List<Apply> GetApplyList()
+        {
+            var query = Service.Common.db.Queryable<Model.Entities.Apply>()
+                .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.approver, x => x.approverid).ToList();
+            return query;
         }
     }
 }

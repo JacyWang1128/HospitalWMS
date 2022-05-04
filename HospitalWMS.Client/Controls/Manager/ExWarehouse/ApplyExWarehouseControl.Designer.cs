@@ -50,7 +50,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.btnDelete = new Sunny.UI.UIButton();
             this.btnUpdate = new Sunny.UI.UIButton();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
-            this.dgvImWarehouse = new Sunny.UI.UIDataGridView();
+            this.dgvApply = new Sunny.UI.UIDataGridView();
             this.btnApply = new Sunny.UI.UIButton();
             this.uiFlowLayoutPanel1 = new Sunny.UI.UIFlowLayoutPanel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
@@ -62,7 +62,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiPanel3.SuspendLayout();
             this.uiPanel2.SuspendLayout();
             this.uiGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImWarehouse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApply)).BeginInit();
             this.uiFlowLayoutPanel1.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
@@ -81,7 +81,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiLabel1.Text = "仓库";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiLabel1.Click += new System.EventHandler(this.uiLabel1_Click);
             this.uiLabel1.Paint += new System.Windows.Forms.PaintEventHandler(this.uiLabel2_Paint);
             // 
             // dgvItem
@@ -132,7 +131,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.dgvItem.Size = new System.Drawing.Size(1046, 182);
             this.dgvItem.TabIndex = 0;
             this.dgvItem.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.dgvItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellContentClick);
             // 
             // uiPanel3
             // 
@@ -148,21 +146,19 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiPanel3.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiPanel3.Click += new System.EventHandler(this.uiPanel3_Click);
             // 
             // fiNum
             // 
             this.fiNum.BackColor = System.Drawing.Color.Transparent;
             this.fiNum.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fiNum.Location = new System.Drawing.Point(0, 0);
-            this.fiNum.Margin = new System.Windows.Forms.Padding(37, 49, 37, 49);
+            this.fiNum.Margin = new System.Windows.Forms.Padding(62, 86, 62, 86);
             this.fiNum.Name = "fiNum";
             this.fiNum.PwdCharacter = '\0';
             this.fiNum.Size = new System.Drawing.Size(344, 46);
             this.fiNum.TabIndex = 0;
             this.fiNum.Title = "数量";
             this.fiNum.Value = "";
-            this.fiNum.Load += new System.EventHandler(this.fiNum_Load);
             // 
             // btnAdd
             // 
@@ -193,7 +189,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiPanel2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiPanel2.Click += new System.EventHandler(this.uiPanel2_Click);
             // 
             // cbGoods
             // 
@@ -210,7 +205,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.cbGoods.TabIndex = 1;
             this.cbGoods.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbGoods.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.cbGoods.SelectedIndexChanged += new System.EventHandler(this.cbGoods_SelectedIndexChanged);
             // 
             // uiLabel2
             // 
@@ -223,7 +217,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiLabel2.Text = "物资";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiLabel2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiLabel2.Click += new System.EventHandler(this.uiLabel2_Click);
             this.uiLabel2.Paint += new System.Windows.Forms.PaintEventHandler(this.uiLabel2_Paint);
             // 
             // btnDelete
@@ -257,7 +250,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             // uiGroupBox2
             // 
             this.uiTableLayoutPanel1.SetColumnSpan(this.uiGroupBox2, 3);
-            this.uiGroupBox2.Controls.Add(this.dgvImWarehouse);
+            this.uiGroupBox2.Controls.Add(this.dgvApply);
             this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiGroupBox2.Location = new System.Drawing.Point(9, 346);
@@ -267,17 +260,16 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiGroupBox2.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox2.Size = new System.Drawing.Size(1046, 215);
             this.uiGroupBox2.TabIndex = 17;
-            this.uiGroupBox2.Text = "申请记录";
+            this.uiGroupBox2.Text = "申领记录";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiGroupBox2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiGroupBox2.Click += new System.EventHandler(this.uiGroupBox2_Click);
             // 
-            // dgvImWarehouse
+            // dgvApply
             // 
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.dgvImWarehouse.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvImWarehouse.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.dgvImWarehouse.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvApply.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvApply.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.dgvApply.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -285,8 +277,8 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvImWarehouse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvImWarehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvApply.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvApply.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -294,13 +286,13 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvImWarehouse.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvImWarehouse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvImWarehouse.EnableHeadersVisualStyles = false;
-            this.dgvImWarehouse.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgvImWarehouse.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.dgvImWarehouse.Location = new System.Drawing.Point(0, 32);
-            this.dgvImWarehouse.Name = "dgvImWarehouse";
+            this.dgvApply.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvApply.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvApply.EnableHeadersVisualStyles = false;
+            this.dgvApply.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgvApply.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.dgvApply.Location = new System.Drawing.Point(0, 32);
+            this.dgvApply.Name = "dgvApply";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -308,19 +300,18 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvImWarehouse.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvApply.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.dgvImWarehouse.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvImWarehouse.RowTemplate.Height = 23;
-            this.dgvImWarehouse.SelectedIndex = -1;
-            this.dgvImWarehouse.Size = new System.Drawing.Size(1046, 183);
-            this.dgvImWarehouse.TabIndex = 1;
-            this.dgvImWarehouse.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.dgvImWarehouse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImWarehouse_CellContentClick);
+            this.dgvApply.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvApply.RowTemplate.Height = 23;
+            this.dgvApply.SelectedIndex = -1;
+            this.dgvApply.Size = new System.Drawing.Size(1046, 183);
+            this.dgvApply.TabIndex = 1;
+            this.dgvApply.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // btnApply
             // 
@@ -357,7 +348,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiFlowLayoutPanel1.Text = "uiFlowLayoutPanel1";
             this.uiFlowLayoutPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiFlowLayoutPanel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiFlowLayoutPanel1.Click += new System.EventHandler(this.uiFlowLayoutPanel1_Click);
             // 
             // uiGroupBox1
             // 
@@ -375,7 +365,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiGroupBox1.Text = "入库物品";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiGroupBox1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiGroupBox1.Click += new System.EventHandler(this.uiGroupBox1_Click);
             // 
             // uiTableLayoutPanel1
             // 
@@ -403,7 +392,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiTableLayoutPanel1.Size = new System.Drawing.Size(1064, 571);
             this.uiTableLayoutPanel1.TabIndex = 1;
             this.uiTableLayoutPanel1.TagString = null;
-            this.uiTableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.uiTableLayoutPanel1_Paint);
             // 
             // uiPanel1
             // 
@@ -420,7 +408,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiPanel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiPanel1.Click += new System.EventHandler(this.uiPanel1_Click);
             // 
             // cbWarehouse
             // 
@@ -437,7 +424,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.cbWarehouse.TabIndex = 1;
             this.cbWarehouse.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.cbWarehouse.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.cbWarehouse.SelectedIndexChanged += new System.EventHandler(this.cbWarehouse_SelectedIndexChanged);
             // 
             // uiTitlePanel1
             // 
@@ -456,7 +442,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiTitlePanel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.uiTitlePanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTitlePanel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiTitlePanel1.Click += new System.EventHandler(this.uiTitlePanel1_Click);
             // 
             // ApplyExWarehouseControl
             // 
@@ -464,12 +449,11 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.uiTitlePanel1);
             this.Name = "ApplyExWarehouseControl";
-            this.Size = new System.Drawing.Size(1064, 606);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
             this.uiPanel3.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
             this.uiGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImWarehouse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApply)).EndInit();
             this.uiFlowLayoutPanel1.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
             this.uiTableLayoutPanel1.ResumeLayout(false);
@@ -498,7 +482,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UIPanel uiPanel1;
         private Sunny.UI.UIComboBox cbWarehouse;
-        private Sunny.UI.UIDataGridView dgvImWarehouse;
+        private Sunny.UI.UIDataGridView dgvApply;
         private Sunny.UI.UITitlePanel uiTitlePanel1;
     }
 }

@@ -81,5 +81,32 @@ namespace HospitalWMS.Client.Controls.User
             uiPanel1.Controls.Add(control);
             control.FreshData();
         }
+
+        private void uiTreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if(e.Node.Nodes.Count < 1)
+            {
+                switch (e.Node.Text)
+                {
+                    case "申领物资":
+                        break;
+                    case "申领查询":
+                        break;
+                    case "退库物资":
+                        break;
+                    case "退库查询":
+                        break;
+                    case "申购物资":
+                        break;
+                    case "申购查询":
+                        break;
+                    case "修改个人信息":
+                        FreshUI(ChangePasswordControl);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

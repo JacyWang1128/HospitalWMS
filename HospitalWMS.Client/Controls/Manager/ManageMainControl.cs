@@ -5,6 +5,7 @@ using HospitalWMS.Client.Controls.Manager.ImWarehouse;
 using HospitalWMS.Client.Controls.Manager.Purchase;
 using HospitalWMS.Client.Controls.Manager.Restitution;
 using HospitalWMS.Client.Controls.Manager.Supplier;
+using HospitalWMS.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,18 @@ namespace HospitalWMS.Client.Controls.Manager
 {
     public partial class ManageMainControl : UserControl
     {
+        private static ManageMainControl _instance = null;
+        public static ManageMainControl Instatnce
+        {
+            get
+            {
+                return _instance;
+            }
+            set
+            {
+                _instance = value;
+            }
+        }
         private SupplierManageControl _supplierManageControl = null;
         private SpecificationManageControl _specificationManageControl = null;
         private GoodsManagerControl _goodsManageControl = null;
@@ -32,6 +45,7 @@ namespace HospitalWMS.Client.Controls.Manager
         private ChangePasswordControl _changePasswordControl = null;
         private ApplyManageControl _applyMangeControl = null;
         private RestitutionManageControl _restitutionManageControl = null;
+        private ApplyQueryControl applyQueryControl = null;
 
         public ManageMainControl()
         {
@@ -71,7 +85,7 @@ namespace HospitalWMS.Client.Controls.Manager
             set => _goodsManageControl = value;
         }
 
-        internal ApplyImWarehouseControl ApplyImWarehouseControl
+        public ApplyImWarehouseControl ApplyImWarehouseControl
         {
             get
             {
@@ -158,7 +172,7 @@ namespace HospitalWMS.Client.Controls.Manager
             set => _changePasswordControl = value;
         }
 
-        internal ApplyManageControl ApplyMangeControl
+        public ApplyManageControl ApplyMangeControl
         {
             get
             {
@@ -179,6 +193,11 @@ namespace HospitalWMS.Client.Controls.Manager
             }
             set => _restitutionManageControl = value;
         }
+
+        public ApplyQueryControl ApplyQueryControl { get {
+                if (applyQueryControl == null)
+                    applyQueryControl = new ApplyQueryControl();
+                return applyQueryControl; } set => applyQueryControl = value; }
 
         private void btnSupplier_Click(object sender, EventArgs e)
         {
@@ -279,6 +298,7 @@ namespace HospitalWMS.Client.Controls.Manager
                     case "审核申领":
                         break;
                     case "查询申领":
+                        FreshUI(ApplyQueryControl);
                         break;
                     case "审核退库":
                         break;
@@ -313,6 +333,37 @@ namespace HospitalWMS.Client.Controls.Manager
             uiPanel1.Controls.Add(control);
             control.Dock = DockStyle.Fill;
             control.FreshData();
+        }
+
+        public void FreshUI(Type UItype)
+        {
+            var properties = this.GetType().GetProperties();
+            foreach (var item in properties)
+            {
+                if (item.PropertyType.Name == UItype.Name)
+                {
+                    BaseDataControl control = null;
+                    control = item.GetValue(this) as BaseDataControl;
+                    FreshUI(control);
+                }
+            }
+        }
+
+        public void SkipUI(Type UItype, EntityBase entity)
+        {
+            var properties = this.GetType().GetProperties();
+            foreach (var item in properties)
+            {
+                if(item.PropertyType.Name == UItype.Name)
+                {
+                    BaseDataControl control = null;
+                    control = item.GetValue(this) as BaseDataControl;
+                    uiPanel1.Controls.Clear();
+                    uiPanel1.Controls.Add(control);
+                    control.Dock = DockStyle.Fill;
+                    control.InitData(entity);
+                }
+            }
         }
     }
 }

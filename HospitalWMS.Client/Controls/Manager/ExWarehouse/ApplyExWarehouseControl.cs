@@ -37,13 +37,16 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
         }
         public void FreshApply()
         {
-            var query = Service.Common.db.Queryable<Model.Entities.ExWarehouse>()
-                .Mapper(x => x.applier, x => x.applierid)
-                .Mapper(x => x.approver, x => x.approverid)
-                //.Mapper(x => x.items, x => x.items.First().applyid)
-                .Where(x => x.applierid == Service.Common.currentUser.id).ToList()
-                .Select(x => new { 编号 = x.id, 申请时间 = x.applytime, 申请人 = x.applier.displayname, 审批人 = x.approver == null?"":x.approver.displayname, 申请结果 = x.result.ToString() }).ToList();
-            dgvImWarehouse.DataSource = query;
+            //var query = Service.Common.db.Queryable<Model.Entities.ExWarehouse>()
+            //    .Mapper(x => x.applier, x => x.applierid)
+            //    .Mapper(x => x.approver, x => x.approverid)
+            //    //.Mapper(x => x.items, x => x.items.First().applyid)
+            //    .Where(x => x.applierid == Service.Common.currentUser.id).ToList()
+            //    .Select(x => new { 编号 = x.id, 申请时间 = x.applytime, 申请人 = x.applier.displayname, 审批人 = x.approver == null?"":x.approver.displayname, 申请结果 = x.result.ToString() }).ToList();
+            var applys = Service.Business.GetApplyList().Where(x => x.result == Model.Enums.ApplyResult.审核通过)
+                .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier == null ? "" : x.applier.displayname, 申请原因 = x.cause, 申请时间 = x.applytime, 审核人 = x.approver == null ? "" : x.approver.displayname, 审核结果 = x.result })
+                .ToList();
+            dgvApply.DataSource = applys;
             cbWarehouse.DataSource = Service.Common.db.Queryable<Model.Entities.Warehouse>().ToDataTable();
             cbWarehouse.DisplayMember = "name";
             cbGoods.DataSource = Service.Common.db.Queryable<Model.Entities.Goods>().ToDataTable();
@@ -97,7 +100,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
         {
             if (dgvItem.SelectedRows.Count < 1)
             {
-                MessageBox.Show("请选择要删除的行！");
+                MessageBox.Show("请选择要更新的行！");
                 return;
             }
             var index = Convert.ToInt32(dgvItem.SelectedRows[0].Cells["编号"].Value);
@@ -120,8 +123,14 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
         {
             try
             {
+                if (dgvApply.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("请选择对应的申领单！");
+                    return;
+                }
                 var entity = new Model.Entities.ExWarehouse();
                 entity = SetValue(entity);
+                entity.applierid = Convert.ToInt64(dgvApply.SelectedRows[0].Cells["编号"].Value);
                 Service.DAO.Insert(entity);
                 Service.DAO.Insert(items.ToArray());
                 items = null;
@@ -132,81 +141,6 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             {
                 MessageBox.Show("申请失败！");
             }
-        }
-
-        private void dgvItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void uiPanel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fiNum_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbGoods_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uiPanel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uiTitlePanel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uiLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uiGroupBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvImWarehouse_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void uiFlowLayoutPanel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uiGroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uiTableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void uiPanel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbWarehouse_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uiLabel1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

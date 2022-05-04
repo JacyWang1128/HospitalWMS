@@ -108,6 +108,12 @@
     <Compile Include="Controls\Manager\Apply\ApplyManageControl.Designer.cs">
       <DependentUpon>ApplyManageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Manager\Apply\ApplyQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\Apply\ApplyQueryControl.Designer.cs">
+      <DependentUpon>ApplyQueryControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Manager\ExWarehouse\ApplyExWarehouseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     </Compile>
     <Compile Include="Controls\Manager\ExWarehouse\ExWarehouseManageControl.Designer.cs">
       <DependentUpon>ExWarehouseManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\ExWarehouse\ExWarehouseQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\ExWarehouse\ExWarehouseQueryControl.Designer.cs">
+      <DependentUpon>ExWarehouseQueryControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Manager\Goods\GoodsManagerControl.cs">
       <SubType>UserControl</SubType>
@@ -179,6 +191,30 @@
     </Compile>
     <Compile Include="Controls\Manager\Supplier\SupplierManageControl.Designer.cs">
       <DependentUpon>SupplierManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Purchaser\ApplyPurchaseManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Purchaser\ApplyPurchaseManageControl.Designer.cs">
+      <DependentUpon>ApplyPurchaseManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Purchaser\ApplyPurchaseQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Purchaser\ApplyPurchaseQueryControl.Designer.cs">
+      <DependentUpon>ApplyPurchaseQueryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Purchaser\PurchaseQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Purchaser\PurchaseQueryControl.Designer.cs">
+      <DependentUpon>PurchaseQueryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Purchaser\PurchaserMainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Purchaser\PurchaserMainControl.Designer.cs">
+      <DependentUpon>PurchaserMainControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\UserInfoControl.cs">
       <SubType>UserControl</SubType>
@@ -253,11 +289,17 @@
     <EmbeddedResource Include="Controls\Manager\Apply\ApplyManageControl.resx">
       <DependentUpon>ApplyManageControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\Apply\ApplyQueryControl.resx">
+      <DependentUpon>ApplyQueryControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Manager\ExWarehouse\ApplyExWarehouseControl.resx">
       <DependentUpon>ApplyExWarehouseControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Manager\ExWarehouse\ExWarehouseManageControl.resx">
       <DependentUpon>ExWarehouseManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\ExWarehouse\ExWarehouseQueryControl.resx">
+      <DependentUpon>ExWarehouseQueryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Manager\Goods\GoodsManagerControl.resx">
       <DependentUpon>GoodsManagerControl.cs</DependentUpon>
@@ -288,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Manager\Supplier\SupplierManageControl.resx">
       <DependentUpon>SupplierManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Purchaser\PurchaserMainControl.resx">
+      <DependentUpon>PurchaserMainControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserInfoControl.resx">
       <DependentUpon>UserInfoControl.cs</DependentUpon>

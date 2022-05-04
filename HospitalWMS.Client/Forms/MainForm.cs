@@ -21,13 +21,16 @@ namespace HospitalWMS.Client.Forms
             switch (Service.Common.currentUser.role)
             {
                 case Model.Enums.UserType.系统管理员:
-                    uiContent.Controls.Add(new AdminMainControl() { Dock = DockStyle.Fill });
+                    var control = new AdminMainControl() { Dock = DockStyle.Fill };
+                    uiContent.Controls.Add(control);
                     break;
                 case Model.Enums.UserType.申领员:
                     uiContent.Controls.Add(new UserMainControl() { Dock = DockStyle.Fill });
                     break;
                 case Model.Enums.UserType.仓库管理员:
-                    uiContent.Controls.Add(new ManageMainControl() { Dock = DockStyle.Fill });
+                    var control3 = new ManageMainControl() { Dock = DockStyle.Fill };
+                    ManageMainControl.Instatnce = control3;
+                    uiContent.Controls.Add(control3);
                     break;
                 default:
                     break;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalWMS.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,11 @@ namespace HospitalWMS.Client.Controls
         }
 
         public virtual void FreshData()
+        {
+
+        }
+
+        public virtual void InitData(EntityBase entity)
         {
 
         }
