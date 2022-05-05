@@ -1,5 +1,6 @@
 ﻿using HospitalWMS.Client.Controls.Admin;
 using HospitalWMS.Client.Controls.Manager;
+using HospitalWMS.Client.Controls.Purchaser;
 using HospitalWMS.Client.Controls.User;
 using System;
 using System.Collections.Generic;
@@ -25,12 +26,19 @@ namespace HospitalWMS.Client.Forms
                     uiContent.Controls.Add(control);
                     break;
                 case Model.Enums.UserType.申领员:
-                    uiContent.Controls.Add(new UserMainControl() { Dock = DockStyle.Fill });
+                    var control2 = new UserMainControl() { Dock = DockStyle.Fill };
+                    uiContent.Controls.Add(control2);
+                    UserMainControl.Instance = control2;
                     break;
                 case Model.Enums.UserType.仓库管理员:
                     var control3 = new ManageMainControl() { Dock = DockStyle.Fill };
-                    ManageMainControl.Instatnce = control3;
+                    ManageMainControl.Instance = control3;
                     uiContent.Controls.Add(control3);
+                    break;
+                case Model.Enums.UserType.采购人员:
+                    var control4 = new PurchaserMainControl() { Dock = DockStyle.Fill };
+                    PurchaserMainControl.Instance = control4;
+                    uiContent.Controls.Add(control4);
                     break;
                 default:
                     break;

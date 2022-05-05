@@ -64,7 +64,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
         {
             if ((ApplyResult)dgvApply.Rows[e.RowIndex].Cells["审核结果"].Value == ApplyResult.未审批)
             {
-                ManageMainControl.Instatnce.SkipUI(typeof(ExWarehouseManageControl), new Model.EntityBase() { id = (long)dgvApply.Rows[e.RowIndex].Cells["编号"].Value });
+                ManageMainControl.Instance.SkipUI(typeof(ExWarehouseManageControl), new Model.EntityBase() { id = (long)dgvApply.Rows[e.RowIndex].Cells["编号"].Value });
             }
             else
             {

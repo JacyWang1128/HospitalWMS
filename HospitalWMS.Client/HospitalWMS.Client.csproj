@@ -234,11 +234,35 @@
     <Compile Include="Controls\User\ApplyControl.Designer.cs">
       <DependentUpon>ApplyControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\User\ApplyPurchaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\User\ApplyPurchaseControl.Designer.cs">
+      <DependentUpon>ApplyPurchaseControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\User\RestitutionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\User\RestitutionControl.Designer.cs">
       <DependentUpon>RestitutionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\SelfApplyPurchaseQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\User\SelfApplyPurchaseQueryControl.Designer.cs">
+      <DependentUpon>SelfApplyPurchaseQueryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\SelfApplyQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\User\SelfApplyQueryControl.Designer.cs">
+      <DependentUpon>SelfApplyQueryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\SelfRestitutionQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\User\SelfRestitutionQueryControl.Designer.cs">
+      <DependentUpon>SelfRestitutionQueryControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\User\UserMainControl.cs">
       <SubType>UserControl</SubType>
@@ -342,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\User\RestitutionControl.resx">
       <DependentUpon>RestitutionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\User\SelfApplyQueryControl.resx">
+      <DependentUpon>SelfApplyQueryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\User\UserMainControl.resx">
       <DependentUpon>UserMainControl.cs</DependentUpon>

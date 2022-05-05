@@ -21,7 +21,7 @@ namespace HospitalWMS.Client.Controls.Manager.Apply
         {
             if ((ApplyResult)dgvApply.Rows[e.RowIndex].Cells["审核结果"].Value == ApplyResult.未审批)
             {
-                ManageMainControl.Instatnce.SkipUI(typeof(ApplyManageControl), new Model.EntityBase() { id = (long)dgvApply.Rows[e.RowIndex].Cells["编号"].Value });
+                ManageMainControl.Instance.SkipUI(typeof(ApplyManageControl), new Model.EntityBase() { id = (long)dgvApply.Rows[e.RowIndex].Cells["编号"].Value });
             }
             else
             {

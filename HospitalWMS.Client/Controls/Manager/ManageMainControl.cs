@@ -21,7 +21,7 @@ namespace HospitalWMS.Client.Controls.Manager
     public partial class ManageMainControl : UserControl
     {
         private static ManageMainControl _instance = null;
-        public static ManageMainControl Instatnce
+        public static ManageMainControl Instance
         {
             get
             {

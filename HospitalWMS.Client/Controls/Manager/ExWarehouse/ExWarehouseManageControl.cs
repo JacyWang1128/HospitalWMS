@@ -154,7 +154,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             {
                 MessageBox.Show(ex.Message);
             }
-            ManageMainControl.Instatnce.FreshUI(typeof(ExWarehouseQueryControl));
+            ManageMainControl.Instance.FreshUI(typeof(ExWarehouseQueryControl));
         }
 
         private void btnRecall_Click(object sender, EventArgs e)
@@ -173,7 +173,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             var id = ApplyId;/// Convert.ToInt64(dgvApply.SelectedRows[0].Cells["编号"].Value);
             if (!Service.Business.RecallApply<Model.Entities.ExWarehouse>(id))
                 MessageBox.Show("撤回失败！");
-            ManageMainControl.Instatnce.FreshUI(typeof(ExWarehouseQueryControl));
+            ManageMainControl.Instance.FreshUI(typeof(ExWarehouseQueryControl));
         }
     }
 }

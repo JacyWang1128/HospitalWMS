@@ -61,7 +61,7 @@ namespace HospitalWMS.Client.Controls.Manager.Apply
             var items = applyitems.Select(x => new { 编号 = x.sort, 商品名称 = x.goods.name, 仓库 = x.warehouse.name, 单价 = x.goods.price, 数量 = x.count })
                 .ToList();
             dgvItem.DataSource = items;
-            var goodsids = applyitems.Select(x => string.Join("_", x.warehouseid, x.goodsid)).Distinct().ToArray();
+            //var goodsids = applyitems.Select(x => string.Join("_", x.warehouseid, x.goodsid)).Distinct().ToArray();
             var stock = Service.Common.db.Queryable<Stock>()
                        .Mapper(x => x.warehouse, x => x.warehouseid)
                        .Mapper(x => x.goods, x => x.goodsid)
@@ -150,7 +150,7 @@ namespace HospitalWMS.Client.Controls.Manager.Apply
                         }
                         Service.DAO.Insert(exwarehouse);
                         Service.DAO.Insert(exwarehouseitems.ToArray());
-                        ManageMainControl.Instatnce.FreshUI(typeof(ApplyQueryControl));
+                        ManageMainControl.Instance.FreshUI(typeof(ApplyQueryControl));
                     }
                     else
                         MessageBox.Show("批准失败！");
@@ -181,7 +181,7 @@ namespace HospitalWMS.Client.Controls.Manager.Apply
             var id = ApplyId;//Convert.ToInt64(dgvStock.SelectedRows[0].Cells["编号"].Value);
             if (!Service.Business.RecallApply<Model.Entities.Apply>(id))
                 MessageBox.Show("撤回失败！");
-            ManageMainControl.Instatnce.FreshUI(typeof(ApplyQueryControl));
+            ManageMainControl.Instance.FreshUI(typeof(ApplyQueryControl));
         }
     }
 }
