@@ -352,6 +352,9 @@
     <EmbeddedResource Include="Controls\Manager\ImWarehouse\ImWarehouseManageControl.resx">
       <DependentUpon>ImWarehouseManageControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\ImWarehouse\ImWarehouseQueryControl.resx">
+      <DependentUpon>ImWarehouseQueryControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Manager\ManageMainControl.resx">
       <DependentUpon>ManageMainControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Manager\Restitution\RestitutionManageControl.resx">
       <DependentUpon>RestitutionManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manager\Restitution\RestitutionQueryControl.resx">
+      <DependentUpon>RestitutionQueryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Manager\Supplier\SupplierManageControl.resx">
       <DependentUpon>SupplierManageControl.cs</DependentUpon>

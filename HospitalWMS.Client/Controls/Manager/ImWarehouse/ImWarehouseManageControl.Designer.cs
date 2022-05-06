@@ -44,14 +44,14 @@ namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
             this.uiFlowLayoutPanel1 = new Sunny.UI.UIFlowLayoutPanel();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
-            this.dgvImWarehouse = new Sunny.UI.UIDataGridView();
+            this.dgvApply = new Sunny.UI.UIDataGridView();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.dgvItem = new Sunny.UI.UIDataGridView();
             this.uiTitlePanel1 = new Sunny.UI.UITitlePanel();
             this.uiFlowLayoutPanel1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImWarehouse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApply)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
             this.uiTitlePanel1.SuspendLayout();
@@ -131,7 +131,7 @@ namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
             // uiGroupBox2
             // 
             this.uiTableLayoutPanel1.SetColumnSpan(this.uiGroupBox2, 3);
-            this.uiGroupBox2.Controls.Add(this.dgvImWarehouse);
+            this.uiGroupBox2.Controls.Add(this.dgvApply);
             this.uiGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiGroupBox2.Location = new System.Drawing.Point(9, 318);
@@ -145,12 +145,12 @@ namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiGroupBox2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // dgvImWarehouse
+            // dgvApply
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.dgvImWarehouse.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvImWarehouse.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.dgvImWarehouse.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvApply.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvApply.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.dgvApply.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -158,8 +158,8 @@ namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvImWarehouse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvImWarehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvApply.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvApply.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -167,13 +167,13 @@ namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvImWarehouse.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvImWarehouse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvImWarehouse.EnableHeadersVisualStyles = false;
-            this.dgvImWarehouse.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgvImWarehouse.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.dgvImWarehouse.Location = new System.Drawing.Point(0, 32);
-            this.dgvImWarehouse.Name = "dgvImWarehouse";
+            this.dgvApply.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvApply.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvApply.EnableHeadersVisualStyles = false;
+            this.dgvApply.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgvApply.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.dgvApply.Location = new System.Drawing.Point(0, 32);
+            this.dgvApply.Name = "dgvApply";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -181,19 +181,19 @@ namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvImWarehouse.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvApply.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.dgvImWarehouse.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvImWarehouse.RowTemplate.Height = 23;
-            this.dgvImWarehouse.SelectedIndex = -1;
-            this.dgvImWarehouse.Size = new System.Drawing.Size(1046, 211);
-            this.dgvImWarehouse.TabIndex = 1;
-            this.dgvImWarehouse.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.dgvImWarehouse.SelectionChanged += new System.EventHandler(this.SelectionChaged);
+            this.dgvApply.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvApply.RowTemplate.Height = 23;
+            this.dgvApply.SelectedIndex = -1;
+            this.dgvApply.Size = new System.Drawing.Size(1046, 211);
+            this.dgvApply.TabIndex = 1;
+            this.dgvApply.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.dgvApply.SelectionChanged += new System.EventHandler(this.SelectionChaged);
             // 
             // uiGroupBox1
             // 
@@ -288,7 +288,7 @@ namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
             this.uiFlowLayoutPanel1.ResumeLayout(false);
             this.uiTableLayoutPanel1.ResumeLayout(false);
             this.uiGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImWarehouse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApply)).EndInit();
             this.uiGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
             this.uiTitlePanel1.ResumeLayout(false);
@@ -303,7 +303,7 @@ namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
         private Sunny.UI.UIButton btnApprove;
         private Sunny.UI.UITitlePanel uiTitlePanel1;
         private Sunny.UI.UIGroupBox uiGroupBox2;
-        private Sunny.UI.UIDataGridView dgvImWarehouse;
+        private Sunny.UI.UIDataGridView dgvApply;
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UIDataGridView dgvItem;
     }

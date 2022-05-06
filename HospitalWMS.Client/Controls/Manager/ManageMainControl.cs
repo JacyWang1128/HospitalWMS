@@ -46,6 +46,9 @@ namespace HospitalWMS.Client.Controls.Manager
         private ApplyManageControl _applyMangeControl = null;
         private RestitutionManageControl _restitutionManageControl = null;
         private ApplyQueryControl applyQueryControl = null;
+        private ExWarehouseQueryControl exWarehouseQueryControl = null;
+        private ImWarehouseQueryControl imWarehouseQueryControl = null;
+        private RestitutionQueryControl restitutionQueryControl = null;
 
         public ManageMainControl()
         {
@@ -205,6 +208,36 @@ namespace HospitalWMS.Client.Controls.Manager
             set => applyQueryControl = value;
         }
 
+        public ExWarehouseQueryControl ExWarehouseQueryControl
+        {
+            get
+            {
+                if (exWarehouseQueryControl == null)
+                    exWarehouseQueryControl = new ExWarehouseQueryControl();
+                return exWarehouseQueryControl;
+            }
+            set => exWarehouseQueryControl = value;
+        }
+        public ImWarehouseQueryControl ImWarehouseQueryControl
+        {
+            get
+            {
+                if (imWarehouseQueryControl == null)
+                    imWarehouseQueryControl = new ImWarehouseQueryControl();
+                return imWarehouseQueryControl;
+            }
+            set => imWarehouseQueryControl = value;
+        }
+        public RestitutionQueryControl RestitutionQueryControl
+        {
+            get
+            {
+                if (restitutionQueryControl == null)
+                    restitutionQueryControl = new RestitutionQueryControl();
+                return restitutionQueryControl;
+            }
+            set => restitutionQueryControl = value;
+        }
 
         private void uiTreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
@@ -220,18 +253,21 @@ namespace HospitalWMS.Client.Controls.Manager
                     //case "审核退库":
                     //    break;
                     case "查询退库":
+                        FreshUI(RestitutionQueryControl);
                         break;
                     //case "申请入库":
                     //    break;
                     //case "审核入库":
                     //    break;
                     case "查询入库":
+                        FreshUI(ImWarehouseQueryControl);
                         break;
                     //case "申请出库":
                     //    break;
                     //case "审核出库":
                     //    break;
                     case "查询出库":
+                        FreshUI(ExWarehouseQueryControl);
                         break;
                     case "查看库存":
                         FreshUI(StockManageControl);

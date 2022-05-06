@@ -85,7 +85,7 @@ namespace HospitalWMS.Client.Controls.Manager.Purchase
         private void btnApprove_Click(object sender, EventArgs e)
         {
             var id = ApplyId;
-            var query = applyItems
+            var query = applyItems;
             if (Service.Business.ApproveApply<Model.Entities.Order>(id))
             {
                 //var order_num = dgvApply.SelectedRows[0].Cells["单号"].Value.ToString();

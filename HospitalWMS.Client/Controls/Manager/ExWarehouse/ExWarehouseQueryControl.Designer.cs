@@ -89,17 +89,17 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.uiTableLayoutPanel1.Controls.Add(this.dgvApply, 0, 1);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel5, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiFlowLayoutPanel1, 2, 0);
-            this.uiTableLayoutPanel1.Controls.Add(this.dgvApply, 0, 1);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(0, 35);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
             this.uiTableLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTableLayoutPanel1.RowCount = 2;
+            this.uiTableLayoutPanel1.RowCount = 3;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.uiTableLayoutPanel1.Size = new System.Drawing.Size(1064, 571);
             this.uiTableLayoutPanel1.TabIndex = 1;
             this.uiTableLayoutPanel1.TagString = null;
@@ -226,12 +226,12 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.dgvApply.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.uiTableLayoutPanel1.SetRowSpan(this.dgvApply, 2);
             this.dgvApply.RowTemplate.Height = 23;
             this.dgvApply.SelectedIndex = -1;
             this.dgvApply.Size = new System.Drawing.Size(1048, 499);
-            this.dgvApply.TabIndex = 6;
+            this.dgvApply.TabIndex = 25;
             this.dgvApply.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.dgvApply.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApply_CellDoubleClick);
             // 
             // ExWarehouseQueryControl
             // 
