@@ -90,8 +90,10 @@ namespace HospitalWMS.Client.Controls.Purchaser
                 switch (e.Node.Text)
                 {
                     case "查询申购":
+                        FreshUI(ApplyPurchaseQueryControl);
                         break;
                     case "查询采购":
+                        FreshUI(PurchaseManageControl);
                         break;
                     case "修改个人信息":
                         FreshUI(ChangePasswordControl);

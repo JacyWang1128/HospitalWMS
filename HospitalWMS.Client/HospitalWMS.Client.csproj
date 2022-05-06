@@ -162,6 +162,12 @@
     <Compile Include="Controls\Manager\ImWarehouse\ImWarehouseManageControl.Designer.cs">
       <DependentUpon>ImWarehouseManageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Manager\ImWarehouse\ImWarehouseQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\ImWarehouse\ImWarehouseQueryControl.Designer.cs">
+      <DependentUpon>ImWarehouseQueryControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Manager\ManageMainControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +191,12 @@
     </Compile>
     <Compile Include="Controls\Manager\Restitution\RestitutionManageControl.Designer.cs">
       <DependentUpon>RestitutionManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manager\Restitution\RestitutionQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manager\Restitution\RestitutionQueryControl.Designer.cs">
+      <DependentUpon>RestitutionQueryControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Manager\Supplier\SupplierManageControl.cs">
       <SubType>UserControl</SubType>
@@ -355,6 +367,15 @@
     <EmbeddedResource Include="Controls\Manager\Supplier\SupplierManageControl.resx">
       <DependentUpon>SupplierManageControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Purchaser\ApplyPurchaseManageControl.resx">
+      <DependentUpon>ApplyPurchaseManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Purchaser\ApplyPurchaseQueryControl.resx">
+      <DependentUpon>ApplyPurchaseQueryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Purchaser\PurchaseQueryControl.resx">
+      <DependentUpon>PurchaseQueryControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Purchaser\PurchaserMainControl.resx">
       <DependentUpon>PurchaserMainControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,11 +385,20 @@
     <EmbeddedResource Include="Controls\User\ApplyControl.resx">
       <DependentUpon>ApplyControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\User\ApplyPurchaseControl.resx">
+      <DependentUpon>ApplyPurchaseControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\User\RestitutionControl.resx">
       <DependentUpon>RestitutionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\User\SelfApplyPurchaseQueryControl.resx">
+      <DependentUpon>SelfApplyPurchaseQueryControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\User\SelfApplyQueryControl.resx">
       <DependentUpon>SelfApplyQueryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\User\SelfRestitutionQueryControl.resx">
+      <DependentUpon>SelfRestitutionQueryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\User\UserMainControl.resx">
       <DependentUpon>UserMainControl.cs</DependentUpon>

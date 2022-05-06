@@ -78,7 +78,13 @@ namespace HospitalWMS.Client.Controls.User
         {
             if ((ApplyResult)dgvApply.Rows[e.RowIndex].Cells["审核结果"].Value == ApplyResult.审核通过)
             {
-                UserMainControl.Instance.SkipUI(typeof(RestitutionControl), new Model.EntityBase() { id = (long)dgvApply.Rows[e.RowIndex].Cells["编号"].Value });
+                var applyid = Convert.ToInt64(dgvApply.Rows[e.RowIndex].Cells["编号"].Value);
+                if(Service.Common.db.Queryable<Restitution>().Where(x=>x.applyid == applyid).Any())
+                {
+                    MessageBox.Show("已退库，请勿重复退库！");
+                }
+                else
+                UserMainControl.Instance.SkipUI(typeof(RestitutionControl), new Model.EntityBase() { id = applyid });
             }
         }
     }

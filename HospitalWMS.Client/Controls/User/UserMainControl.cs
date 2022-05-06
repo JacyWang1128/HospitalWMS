@@ -102,27 +102,6 @@ namespace HospitalWMS.Client.Controls.User
             set => selfRestitutionQueryControl = value;
         }
 
-        private void btnPersonInfo_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(ChangePasswordControl);
-        }
-
-        private void btnRestitution_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(RestitutionControl);
-            RestitutionControl.FreshData();
-        }
-
-        private void btnApply_Click(object sender, EventArgs e)
-        {
-            //uiPanel1.Controls.Clear();
-            //uiPanel1.Controls.Add(ApplyControl);
-            //ApplyControl.FreshData();
-            FreshUI(ApplyControl);
-        }
-
         private void uiTreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (e.Node.Nodes.Count < 1)

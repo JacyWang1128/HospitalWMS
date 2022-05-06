@@ -194,126 +194,43 @@ namespace HospitalWMS.Client.Controls.Manager
             set => _restitutionManageControl = value;
         }
 
-        public ApplyQueryControl ApplyQueryControl { get {
+        public ApplyQueryControl ApplyQueryControl
+        {
+            get
+            {
                 if (applyQueryControl == null)
                     applyQueryControl = new ApplyQueryControl();
-                return applyQueryControl; } set => applyQueryControl = value; }
-
-        private void btnSupplier_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(SupplierManageControl);
-            SupplierManageControl.FreshData();
+                return applyQueryControl;
+            }
+            set => applyQueryControl = value;
         }
 
-        private void btnSpecificationManage_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(SpecificationManageControl);
-            SpecificationManageControl.FreshData();
-        }
-
-        private void btnGoods_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(GoodsManageControl);
-            GoodsManageControl.FreshData();
-        }
-
-        private void btnApplyImWarehouse_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(ApplyImWarehouseControl);
-            ApplyImWarehouseControl.FreshData();
-        }
-
-        private void btnApplyExWarehouse_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(ApplyExWarehouseControl);
-            ApplyExWarehouseControl.FreshData();
-        }
-
-        private void btnImWarehouse_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(ImWarehoueManageControl);
-            ImWarehoueManageControl.FreshData();
-        }
-
-        private void btnQueryStock_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(StockManageControl);
-            StockManageControl.FreshData();
-        }
-
-        private void btnExWarehouse_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(ExWarehouseManageControl);
-            ExWarehouseManageControl.FreshData();
-        }
-
-        private void btnApplyPurchase_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(ApplyPurchaseControl);
-            ApplyPurchaseControl.FreshData();
-        }
-
-        private void btnPurchase_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(PurchaseManageControl);
-            PurchaseManageControl.FreshData();
-        }
-
-        private void btnPersonInfo_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(ChangePasswordControl);
-        }
-
-        private void btnApply_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(ApplyMangeControl);
-            ApplyMangeControl.FreshData();
-        }
-
-        private void btnRestitution_Click(object sender, EventArgs e)
-        {
-            uiPanel1.Controls.Clear();
-            uiPanel1.Controls.Add(RestitutionManageControl);
-            RestitutionManageControl.FreshData();
-        }
 
         private void uiTreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if(e.Node.Nodes.Count < 1)
+            if (e.Node.Nodes.Count < 1)
             {
                 switch (e.Node.Text)
                 {
-                    case "审核申领":
-                        break;
+                    //case "审核申领":
+                    //    break;
                     case "查询申领":
                         FreshUI(ApplyQueryControl);
                         break;
-                    case "审核退库":
-                        break;
+                    //case "审核退库":
+                    //    break;
                     case "查询退库":
                         break;
-                    case "申请入库":
-                        break;
-                    case "审核入库":
-                        break;
+                    //case "申请入库":
+                    //    break;
+                    //case "审核入库":
+                    //    break;
                     case "查询入库":
                         break;
-                    case "申请出库":
-                        break;
-                    case "审核出库":
-                        break;
+                    //case "申请出库":
+                    //    break;
+                    //case "审核出库":
+                    //    break;
                     case "查询出库":
                         break;
                     case "查看库存":
@@ -354,7 +271,7 @@ namespace HospitalWMS.Client.Controls.Manager
             var properties = this.GetType().GetProperties();
             foreach (var item in properties)
             {
-                if(item.PropertyType.Name == UItype.Name)
+                if (item.PropertyType.Name == UItype.Name)
                 {
                     BaseDataControl control = null;
                     control = item.GetValue(this) as BaseDataControl;
