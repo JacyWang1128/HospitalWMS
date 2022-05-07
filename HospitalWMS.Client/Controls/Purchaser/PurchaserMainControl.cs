@@ -93,7 +93,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
                         FreshUI(ApplyPurchaseQueryControl);
                         break;
                     case "查询采购":
-                        FreshUI(PurchaseManageControl);
+                        FreshUI(PurchaseQueryControl);
                         break;
                     case "修改个人信息":
                         FreshUI(ChangePasswordControl);

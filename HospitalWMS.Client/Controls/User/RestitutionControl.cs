@@ -38,6 +38,7 @@ namespace HospitalWMS.Client.Controls.User
                     .Mapper(x => x.warehouse, x => x.warehouseid)
                     .Where(x => x.applyid == apply.uuid).ToList();
                 dgvApply.DataSource = applyItems.Select(x => new { 编号 = x.sort, 物资 = x.goods.name, 数量 = x.count, 仓库 = x.warehouse.name }).ToList();
+                FreshData();
             }
         }
 
@@ -81,14 +82,15 @@ namespace HospitalWMS.Client.Controls.User
             entity.applytime = DateTime.Now;
             entity.cause = fiCause.Value;
             entity.applyid = apply.id;
+            entity.approvecause = string.Empty;
             return entity;
         }
         private Model.Entities.RestitutionItem SetValue(Model.Entities.RestitutionItem entity)
         {
             entity.applyid = ApplyUid;
             entity.count = Convert.ToInt32(fiNum.Value);
-            entity.goodsid = Convert.ToInt64((cbGoods.SelectedItem as DataRowView).Row["id"].ToString());
-            entity.goods = new Model.Entities.Goods() { name = (cbGoods.SelectedItem as DataRowView).Row["name"].ToString() };
+            entity.goodsid = (cbGoods.SelectedItem as Model.Entities.Goods).id;
+            entity.goods = new Model.Entities.Goods() { name = (cbGoods.SelectedItem as Model.Entities.Goods).name };
             entity.warehouseid = Convert.ToInt64((cbWarehouse.SelectedItem as DataRowView).Row["id"].ToString());
             entity.warehouse = new Warehouse() { name = (cbWarehouse.SelectedItem as DataRowView).Row["name"].ToString() };
             entity.sort = items.Count + 1;
@@ -168,7 +170,7 @@ namespace HospitalWMS.Client.Controls.User
                 Service.DAO.Insert(items.ToArray());
                 items = null;
                 ApplyUid = string.Empty;
-                FreshData();
+                UserMainControl.Instance.FreshUI(typeof(SelfRestitutionQueryControl));
             }
             catch (Exception ex)
             {

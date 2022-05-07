@@ -153,6 +153,7 @@ namespace HospitalWMS.Client.Controls.User
                     BaseDataControl control = null;
                     control = item.GetValue(this) as BaseDataControl;
                     FreshUI(control);
+                    return;
                 }
             }
         }
@@ -170,6 +171,7 @@ namespace HospitalWMS.Client.Controls.User
                     uiPanel1.Controls.Add(control);
                     control.Dock = DockStyle.Fill;
                     control.InitData(entity);
+                    return;
                 }
             }
         }

@@ -130,7 +130,8 @@ namespace HospitalWMS.Client.Controls.Manager.Restitution
             }
             else
                 MessageBox.Show("批准失败！");
-            FreshData();
+
+            ManageMainControl.Instance.FreshUI(typeof(RestitutionQueryControl));
         }
 
         private void btnRecall_Click(object sender, EventArgs e)
@@ -149,7 +150,7 @@ namespace HospitalWMS.Client.Controls.Manager.Restitution
             var id = ApplyId;//Convert.ToInt64(dgvApply.SelectedRows[0].Cells["编号"].Value);
             if (!Service.Business.RecallApply<Model.Entities.Restitution>(id))
                 MessageBox.Show("撤回失败！");
-            FreshData();
+            ManageMainControl.Instance.FreshUI(typeof(RestitutionQueryControl));
         }
     }
 }

@@ -125,11 +125,12 @@ namespace HospitalWMS.Client.Controls.Manager.Purchase
                 }
                 Service.DAO.Insert(imwarehouse);
                 Service.DAO.Insert(imwarehouseitems.ToArray());
-                PurchaserMainControl.Instance.FreshUI(typeof(PurchaseQueryControl));
+                //PurchaserMainControl.Instance.FreshUI(typeof(PurchaseQueryControl));
             }
             else
                 MessageBox.Show("批准失败！");
             //FreshData();
+            PurchaserMainControl.Instance.FreshUI(typeof(PurchaseQueryControl));
         }
 
         private void btnRecall_Click(object sender, EventArgs e)
@@ -137,7 +138,7 @@ namespace HospitalWMS.Client.Controls.Manager.Purchase
             var id = ApplyId;
             if (!Service.Business.RecallApply<Model.Entities.Order>(id))
                 MessageBox.Show("撤回失败！");
-            FreshData();
+            PurchaserMainControl.Instance.FreshUI(typeof(PurchaseQueryControl));
         }
     }
 }

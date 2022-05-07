@@ -34,19 +34,17 @@ namespace HospitalWMS.Client.Controls.User
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("物资申领", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("退库物资");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("退库查询");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("物资退库", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("申购物资");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("申购查询");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("物资申购", new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("修改个人信息");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("个人信息", new System.Windows.Forms.TreeNode[] {
-            treeNode10});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("退库查询");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("物资退库", new System.Windows.Forms.TreeNode[] {
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("申购物资");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("申购查询");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("物资申购", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("修改个人信息");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("个人信息", new System.Windows.Forms.TreeNode[] {
+            treeNode9});
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiTreeView1 = new Sunny.UI.UITreeView();
             this.SuspendLayout();
@@ -82,27 +80,25 @@ namespace HospitalWMS.Client.Controls.User
             treeNode2.Text = "申领查询";
             treeNode3.Name = "节点0";
             treeNode3.Text = "物资申领";
-            treeNode4.Name = "节点5";
-            treeNode4.Text = "退库物资";
-            treeNode5.Name = "节点6";
-            treeNode5.Text = "退库查询";
-            treeNode6.Name = "节点1";
-            treeNode6.Text = "物资退库";
-            treeNode7.Name = "节点7";
-            treeNode7.Text = "申购物资";
-            treeNode8.Name = "节点8";
-            treeNode8.Text = "申购查询";
-            treeNode9.Name = "节点2";
-            treeNode9.Text = "物资申购";
-            treeNode10.Name = "节点1";
-            treeNode10.Text = "修改个人信息";
-            treeNode11.Name = "节点0";
-            treeNode11.Text = "个人信息";
+            treeNode4.Name = "节点6";
+            treeNode4.Text = "退库查询";
+            treeNode5.Name = "节点1";
+            treeNode5.Text = "物资退库";
+            treeNode6.Name = "节点7";
+            treeNode6.Text = "申购物资";
+            treeNode7.Name = "节点8";
+            treeNode7.Text = "申购查询";
+            treeNode8.Name = "节点2";
+            treeNode8.Text = "物资申购";
+            treeNode9.Name = "节点1";
+            treeNode9.Text = "修改个人信息";
+            treeNode10.Name = "节点0";
+            treeNode10.Text = "个人信息";
             this.uiTreeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3,
-            treeNode6,
-            treeNode9,
-            treeNode11});
+            treeNode5,
+            treeNode8,
+            treeNode10});
             this.uiTreeView1.ShowPlusMinus = false;
             this.uiTreeView1.ShowText = false;
             this.uiTreeView1.Size = new System.Drawing.Size(129, 606);

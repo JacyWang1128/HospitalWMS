@@ -31,7 +31,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
             if (isFilter)
             {
                 var query = Service.Common.db.Queryable<Model.Entities.Order>()
-                .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.perchaser, x => x.purchaserid).Where(x => x.applierid == Runtime.Instance.currentUser.id)
+                .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.perchaser, x => x.purchaserid)//.Where(x => x.applierid == Runtime.Instance.currentUser.id)
                 .ToList()
                 .Where(x => (cbApplyResult.SelectedItem == null ? true : x.result.ToString() == cbApplyResult.SelectedItem.ToString()))
                 .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier == null ? "" : x.applier.displayname, 申请时间 = x.applytime, 采购人 = x.perchaser == null ? "" : x.perchaser.displayname, 审核结果 = x.result, 采购结果 = x.state })
@@ -41,7 +41,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
             else
             {
                 var query = Service.Common.db.Queryable<Model.Entities.Order>()
-                .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.perchaser, x => x.purchaserid).Where(x => x.applierid == Runtime.Instance.currentUser.id)
+                .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.perchaser, x => x.purchaserid)//.Where(x => x.applierid == Runtime.Instance.currentUser.id)
                 .ToList()
                 .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier == null ? "" : x.applier.displayname, 申请时间 = x.applytime, 采购人 = x.perchaser == null ? "" : x.perchaser.displayname, 审核结果 = x.result,采购结果 = x.state })
                 .ToList();
