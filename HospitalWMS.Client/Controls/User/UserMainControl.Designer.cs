@@ -66,9 +66,9 @@ namespace HospitalWMS.Client.Controls.User
             // uiTreeView1
             // 
             this.uiTreeView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiTreeView1.FillColor = System.Drawing.Color.RoyalBlue;
-            this.uiTreeView1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTreeView1.ForeColor = System.Drawing.Color.White;
+            this.uiTreeView1.FillColor = System.Drawing.Color.AliceBlue;
+            this.uiTreeView1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTreeView1.ForeColor = System.Drawing.Color.Black;
             this.uiTreeView1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiTreeView1.Location = new System.Drawing.Point(0, 0);
             this.uiTreeView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

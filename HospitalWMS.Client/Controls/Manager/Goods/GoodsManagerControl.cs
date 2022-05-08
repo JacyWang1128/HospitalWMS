@@ -24,9 +24,10 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
             var temp = Service.Common.db.Queryable<Model.Entities.Goods>()
                 //.Mapper(x => x.specification, x => x.specificationid)
                 .Mapper(x => x.supplier, x => x.supplierid).ToList()
-                .Select(x => new { 编号 = x.id, 物资名称 = x.name, 规格 = x.specification, 物资类型 = x.goodstype.ToString(), 单位 = x.unit, 价格 = x.price, 供应商 = x.supplier.name })
+                .Select(x => new { 编号 = x.id, 商品编号 = x.num, 物资名称 = x.name, 规格 = x.specification, 物资类型 = x.goodstype.ToString(), 单位 = x.unit, 价格 = x.price, 供应商 = x.supplier.name })
                 .ToList();
             dgvGoods.DataSource = temp;
+            dgvGoods.Columns[0].Visible = false;
             cbGoodsType.DataSource = Enum.GetNames(typeof(GoodsType));
             //cbSpecification.DataSource = Service.Common.db.Queryable<Specification>().Select(x => new { x.id, x.name }).ToDataTable();
             //cbSpecification.DisplayMember = "name";
@@ -41,6 +42,7 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
             entity.specification = fiSpecification.Value;
             entity.supplierid = Convert.ToInt64((cbSupplier.SelectedItem as DataRowView).Row["id"]);
             entity.unit = fiUnit.Value;
+            entity.num = fiGoodsNum.Value;
             return entity;
         }
         private void Lable_Paint(object sender, PaintEventArgs e)

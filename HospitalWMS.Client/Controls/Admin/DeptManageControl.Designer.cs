@@ -42,6 +42,7 @@ namespace HospitalWMS.Client.Controls.Admin
             this.btnDelete = new Sunny.UI.UIButton();
             this.btnUpdate = new Sunny.UI.UIButton();
             this.btnAdd = new Sunny.UI.UIButton();
+            this.fiDeptNum = new HospitalWMS.Client.Controls.FiledInputControl();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).BeginInit();
             this.uiTitlePanel1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
@@ -123,7 +124,8 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.uiTableLayoutPanel1.Controls.Add(this.fiDeptname, 0, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.fiDeptNum, 0, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.fiDeptname, 1, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.dgvDept, 0, 1);
             this.uiTableLayoutPanel1.Controls.Add(this.uiFlowLayoutPanel1, 2, 0);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -143,7 +145,7 @@ namespace HospitalWMS.Client.Controls.Admin
             // 
             this.fiDeptname.BackColor = System.Drawing.Color.Transparent;
             this.fiDeptname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fiDeptname.Location = new System.Drawing.Point(10, 10);
+            this.fiDeptname.Location = new System.Drawing.Point(361, 10);
             this.fiDeptname.Margin = new System.Windows.Forms.Padding(5);
             this.fiDeptname.Name = "fiDeptname";
             this.fiDeptname.PwdCharacter = '\0';
@@ -166,11 +168,8 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiFlowLayoutPanel1.Name = "uiFlowLayoutPanel1";
             this.uiFlowLayoutPanel1.Padding = new System.Windows.Forms.Padding(2);
             this.uiFlowLayoutPanel1.Radius = 1;
-            this.uiFlowLayoutPanel1.RectColor = System.Drawing.Color.Transparent;
-            this.uiFlowLayoutPanel1.RectDisableColor = System.Drawing.Color.Transparent;
             this.uiFlowLayoutPanel1.ShowText = false;
             this.uiFlowLayoutPanel1.Size = new System.Drawing.Size(344, 46);
-            this.uiFlowLayoutPanel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiFlowLayoutPanel1.TabIndex = 7;
             this.uiFlowLayoutPanel1.Text = "uiFlowLayoutPanel1";
             this.uiFlowLayoutPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -218,13 +217,25 @@ namespace HospitalWMS.Client.Controls.Admin
             this.btnAdd.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // fiDeptNum
+            // 
+            this.fiDeptNum.BackColor = System.Drawing.Color.Transparent;
+            this.fiDeptNum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fiDeptNum.Location = new System.Drawing.Point(10, 10);
+            this.fiDeptNum.Margin = new System.Windows.Forms.Padding(5);
+            this.fiDeptNum.Name = "fiDeptNum";
+            this.fiDeptNum.PwdCharacter = '\0';
+            this.fiDeptNum.Size = new System.Drawing.Size(341, 46);
+            this.fiDeptNum.TabIndex = 8;
+            this.fiDeptNum.Title = "部门编号";
+            this.fiDeptNum.Value = "";
+            // 
             // DeptManageControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.uiTitlePanel1);
             this.Name = "DeptManageControl";
-            this.Size = new System.Drawing.Size(1064, 606);
             this.Load += new System.EventHandler(this.DeptMangeageControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDept)).EndInit();
             this.uiTitlePanel1.ResumeLayout(false);
@@ -244,5 +255,6 @@ namespace HospitalWMS.Client.Controls.Admin
         private Sunny.UI.UIButton btnAdd;
         private Sunny.UI.UITitlePanel uiTitlePanel1;
         private Sunny.UI.UIButton btnDelete;
+        private FiledInputControl fiDeptNum;
     }
 }

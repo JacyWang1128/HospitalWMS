@@ -10,6 +10,7 @@ namespace HospitalWMS.Model.Entities
     [SugarTable("department")]
     public class Department:EntityBase
     {
+        public string num { get; set; }
         public string name { get; set; }
     }
 }

@@ -31,8 +31,8 @@ namespace HospitalWMS.Client.Forms
         {
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiLabel1 = new Sunny.UI.UILabel();
-            this.userInfoControl1 = new HospitalWMS.Client.Controls.UserInfoControl();
             this.uiContent = new Sunny.UI.UIPanel();
+            this.userInfoControl1 = new HospitalWMS.Client.Controls.UserInfoControl();
             this.uiPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,25 +56,17 @@ namespace HospitalWMS.Client.Forms
             // 
             this.uiLabel1.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiLabel1.Location = new System.Drawing.Point(0, 0);
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.uiLabel1.Size = new System.Drawing.Size(976, 75);
+            this.uiLabel1.Size = new System.Drawing.Size(662, 75);
+            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiLabel1.TabIndex = 1;
-            this.uiLabel1.Text = "医院物资管理系统";
+            this.uiLabel1.Text = "医院物流管理系统";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // userInfoControl1
-            // 
-            this.userInfoControl1.BackColor = System.Drawing.Color.Transparent;
-            this.userInfoControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.userInfoControl1.Location = new System.Drawing.Point(976, 0);
-            this.userInfoControl1.Margin = new System.Windows.Forms.Padding(13, 16, 13, 16);
-            this.userInfoControl1.Name = "userInfoControl1";
-            this.userInfoControl1.Size = new System.Drawing.Size(288, 75);
-            this.userInfoControl1.TabIndex = 0;
             // 
             // uiContent
             // 
@@ -90,6 +82,16 @@ namespace HospitalWMS.Client.Forms
             this.uiContent.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiContent.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
+            // userInfoControl1
+            // 
+            this.userInfoControl1.BackColor = System.Drawing.Color.Transparent;
+            this.userInfoControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.userInfoControl1.Location = new System.Drawing.Point(662, 0);
+            this.userInfoControl1.Margin = new System.Windows.Forms.Padding(62, 86, 62, 86);
+            this.userInfoControl1.Name = "userInfoControl1";
+            this.userInfoControl1.Size = new System.Drawing.Size(602, 75);
+            this.userInfoControl1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -101,7 +103,8 @@ namespace HospitalWMS.Client.Forms
             this.MaximumSize = new System.Drawing.Size(1280, 720);
             this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "MainForm";
-            this.Text = "医院物资管理系统";
+            this.Text = "医院物流管理系统";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.uiPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

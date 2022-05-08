@@ -19,11 +19,33 @@ namespace HospitalWMS.Client.Controls.Admin
         }
         public override void FreshData()
         {
-            dgvDept.DataSource = Service.Common.db.Queryable<Department>().Select(x => new { 编号 = x.id, 名称 = x.name}).ToDataTable();
+            var table = Service.Common.db.Queryable<Department>().Select(x => new { 编号 = x.id, 部门编号 = x.num, 名称 = x.name }).ToDataTable();
+            dgvDept.DataSource = Service.Common.db.Queryable<Department>().Select(x => new { 编号 = x.id,部门编号 = x.num, 名称 = x.name}).ToDataTable();
+            dgvDept.Columns[0].Visible = false;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var dept = new Department() { name = fiDeptname.Value };
+            if (string.IsNullOrWhiteSpace(fiDeptname.Value))
+            {
+                MessageBox.Show("请输入部门名称！");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(fiDeptNum.Value))
+            {
+                MessageBox.Show("请输入部门编号！");
+                return;
+            }
+            if(Service.Common.db.Queryable<Department>().Any(x=>x.num == fiDeptNum.Value))
+            {
+                MessageBox.Show("请勿添加重复部门编号！");
+                return;
+            }
+            if (Service.Common.db.Queryable<Department>().Any(x => x.name == fiDeptname.Value))
+            {
+                MessageBox.Show("请勿添加重复部门名称！");
+                return;
+            }
+            var dept = new Department() { name = fiDeptname.Value,num = fiDeptNum.Value };
             Service.DAO.Insert(dept); 
             FreshData();
         }
@@ -51,8 +73,29 @@ namespace HospitalWMS.Client.Controls.Admin
                 MessageBox.Show("请选择要更新的行！");
                 return;
             }
+            if (string.IsNullOrWhiteSpace(fiDeptname.Value))
+            {
+                MessageBox.Show("请输入部门名称！");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(fiDeptNum.Value))
+            {
+                MessageBox.Show("请输入部门编号！");
+                return;
+            }
             var entity = Service.Common.db.Queryable<Department>().First(x => x.id == Convert.ToInt64(dgvDept.SelectedRows[0].Cells["编号"].Value));
             entity.name = fiDeptname.Value;
+            entity.num = fiDeptNum.Value;
+            if (Service.Common.db.Queryable<Department>().Any(x => x.id != entity.id && x.num == fiDeptNum.Value))
+            {
+                MessageBox.Show("部门编号重复！");
+                return;
+            }
+            if (Service.Common.db.Queryable<Department>().Any(x => x.id != entity.id && x.name == fiDeptname.Value))
+            {
+                MessageBox.Show("部门名称重复！");
+                return;
+            }
             Service.DAO.Update(entity);
             FreshData();
         }

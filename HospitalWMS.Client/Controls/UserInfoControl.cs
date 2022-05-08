@@ -29,5 +29,17 @@ namespace HospitalWMS.Client.Controls
             if (MessageBox.Show("是否退出登录？","提示",MessageBoxButtons.OKCancel) == DialogResult.OK)
                 Runtime.Instance.Restart();
         }
+
+        private void ibtnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("是否退出登录？", "提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                Runtime.Instance.Restart();
+        }
+
+        private void UserInfoControl_Paint(object sender, PaintEventArgs e)
+        {
+            panel1.Width = 63;
+            uiAvatar1.Width = 63;
+        }
     }
 }

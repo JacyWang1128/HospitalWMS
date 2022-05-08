@@ -87,5 +87,28 @@ namespace HospitalWMS.Client.Controls.User
                 UserMainControl.Instance.SkipUI(typeof(RestitutionControl), new Model.EntityBase() { id = applyid });
             }
         }
+
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            if(dgvApply.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("请选择需要退领的记录！");
+                return;
+            }
+            if ((ApplyResult)dgvApply.Rows[dgvApply.SelectedRows[0].Index].Cells["审核结果"].Value == ApplyResult.审核通过)
+            {
+                var applyid = Convert.ToInt64(dgvApply.Rows[dgvApply.SelectedRows[0].Index].Cells["编号"].Value);
+                if (Service.Common.db.Queryable<Restitution>().Where(x => x.applyid == applyid).Any())
+                {
+                    MessageBox.Show("已退库，请勿重复退库！");
+                }
+                else
+                    UserMainControl.Instance.SkipUI(typeof(RestitutionControl), new Model.EntityBase() { id = applyid });
+            }
+            else
+            {
+                MessageBox.Show("审核未通过，无法退领！");
+            }
+        }
     }
 }

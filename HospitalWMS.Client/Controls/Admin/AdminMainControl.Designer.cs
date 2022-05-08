@@ -59,15 +59,16 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiPanel1.Name = "uiPanel1";
             this.uiPanel1.Size = new System.Drawing.Size(1114, 606);
             this.uiPanel1.TabIndex = 1;
+            this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiPanel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // uiTreeView1
             // 
             this.uiTreeView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiTreeView1.FillColor = System.Drawing.Color.RoyalBlue;
-            this.uiTreeView1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTreeView1.ForeColor = System.Drawing.Color.White;
+            this.uiTreeView1.FillColor = System.Drawing.Color.AliceBlue;
+            this.uiTreeView1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTreeView1.ForeColor = System.Drawing.Color.Black;
             this.uiTreeView1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiTreeView1.Location = new System.Drawing.Point(0, 0);
             this.uiTreeView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -99,6 +100,7 @@ namespace HospitalWMS.Client.Controls.Admin
             treeNode6,
             treeNode8,
             treeNode10});
+            this.uiTreeView1.RectColor = System.Drawing.Color.AliceBlue;
             this.uiTreeView1.ShowPlusMinus = false;
             this.uiTreeView1.ShowText = false;
             this.uiTreeView1.Size = new System.Drawing.Size(150, 606);

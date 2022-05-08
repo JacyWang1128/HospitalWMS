@@ -71,5 +71,22 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
                 MessageBox.Show("该记录已审核！");
             }
         }
+
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            if (dgvApply.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("请选择需要审核的记录！");
+                return;
+            }
+            if ((ApplyResult)dgvApply.Rows[dgvApply.SelectedRows[0].Index].Cells["审核结果"].Value == ApplyResult.未审批)
+            {
+                ManageMainControl.Instance.SkipUI(typeof(ExWarehouseManageControl), new Model.EntityBase() { id = (long)dgvApply.Rows[dgvApply.SelectedRows[0].Index].Cells["编号"].Value });
+            }
+            else
+            {
+                MessageBox.Show("该记录已审核！");
+            }
+        }
     }
 }

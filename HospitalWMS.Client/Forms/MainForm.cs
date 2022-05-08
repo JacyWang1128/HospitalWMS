@@ -44,5 +44,10 @@ namespace HospitalWMS.Client.Forms
                     break;
             }
         }
+
+        private void MainForm_Paint(object sender, PaintEventArgs e)
+        {
+            userInfoControl1.Width = Convert.ToInt32(userInfoControl1.Parent.Width * 0.2);
+        }
     }
 }

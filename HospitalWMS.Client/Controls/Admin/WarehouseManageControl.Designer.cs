@@ -40,8 +40,9 @@ namespace HospitalWMS.Client.Controls.Admin
             this.btnDelete = new Sunny.UI.UIButton();
             this.btnUpdate = new Sunny.UI.UIButton();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
+            this.fiWarehouseName = new HospitalWMS.Client.Controls.FiledInputControl();
             this.uiTitlePanel1 = new Sunny.UI.UITitlePanel();
-            this.filedInputControl1 = new HospitalWMS.Client.Controls.FiledInputControl();
+            this.fiWarehouseNum = new HospitalWMS.Client.Controls.FiledInputControl();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWarehouse)).BeginInit();
             this.uiFlowLayoutPanel1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
@@ -126,11 +127,8 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiFlowLayoutPanel1.Name = "uiFlowLayoutPanel1";
             this.uiFlowLayoutPanel1.Padding = new System.Windows.Forms.Padding(2);
             this.uiFlowLayoutPanel1.Radius = 1;
-            this.uiFlowLayoutPanel1.RectColor = System.Drawing.Color.Transparent;
-            this.uiFlowLayoutPanel1.RectDisableColor = System.Drawing.Color.Transparent;
             this.uiFlowLayoutPanel1.ShowText = false;
             this.uiFlowLayoutPanel1.Size = new System.Drawing.Size(344, 46);
-            this.uiFlowLayoutPanel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiFlowLayoutPanel1.TabIndex = 7;
             this.uiFlowLayoutPanel1.Text = null;
             this.uiFlowLayoutPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,9 +169,10 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.uiTableLayoutPanel1.Controls.Add(this.fiWarehouseNum, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiFlowLayoutPanel1, 2, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.dgvWarehouse, 0, 1);
-            this.uiTableLayoutPanel1.Controls.Add(this.filedInputControl1, 0, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.fiWarehouseName, 1, 0);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(0, 35);
             this.uiTableLayoutPanel1.Name = "uiTableLayoutPanel1";
@@ -181,9 +180,23 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiTableLayoutPanel1.RowCount = 2;
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.uiTableLayoutPanel1.Size = new System.Drawing.Size(1064, 571);
             this.uiTableLayoutPanel1.TabIndex = 0;
             this.uiTableLayoutPanel1.TagString = null;
+            // 
+            // fiWarehouseName
+            // 
+            this.fiWarehouseName.BackColor = System.Drawing.Color.Transparent;
+            this.fiWarehouseName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fiWarehouseName.Location = new System.Drawing.Point(364, 14);
+            this.fiWarehouseName.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.fiWarehouseName.Name = "fiWarehouseName";
+            this.fiWarehouseName.PwdCharacter = '\0';
+            this.fiWarehouseName.Size = new System.Drawing.Size(335, 38);
+            this.fiWarehouseName.TabIndex = 8;
+            this.fiWarehouseName.Title = "名称";
+            this.fiWarehouseName.Value = "";
             // 
             // uiTitlePanel1
             // 
@@ -203,18 +216,18 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiTitlePanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiTitlePanel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // filedInputControl1
+            // fiWarehouseNum
             // 
-            this.filedInputControl1.BackColor = System.Drawing.Color.Transparent;
-            this.filedInputControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filedInputControl1.Location = new System.Drawing.Point(10, 10);
-            this.filedInputControl1.Margin = new System.Windows.Forms.Padding(5);
-            this.filedInputControl1.Name = "filedInputControl1";
-            this.filedInputControl1.PwdCharacter = '\0';
-            this.filedInputControl1.Size = new System.Drawing.Size(341, 46);
-            this.filedInputControl1.TabIndex = 8;
-            this.filedInputControl1.Title = "名称";
-            this.filedInputControl1.Value = "";
+            this.fiWarehouseNum.BackColor = System.Drawing.Color.Transparent;
+            this.fiWarehouseNum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fiWarehouseNum.Location = new System.Drawing.Point(13, 14);
+            this.fiWarehouseNum.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.fiWarehouseNum.Name = "fiWarehouseNum";
+            this.fiWarehouseNum.PwdCharacter = '\0';
+            this.fiWarehouseNum.Size = new System.Drawing.Size(335, 38);
+            this.fiWarehouseNum.TabIndex = 9;
+            this.fiWarehouseNum.Title = "仓库编号";
+            this.fiWarehouseNum.Value = "";
             // 
             // WarehouseManageControl
             // 
@@ -222,7 +235,6 @@ namespace HospitalWMS.Client.Controls.Admin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.uiTitlePanel1);
             this.Name = "WarehouseManageControl";
-            this.Size = new System.Drawing.Size(1064, 606);
             this.Load += new System.EventHandler(this.WarehouseManageControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWarehouse)).EndInit();
             this.uiFlowLayoutPanel1.ResumeLayout(false);
@@ -236,12 +248,12 @@ namespace HospitalWMS.Client.Controls.Admin
 
         private Sunny.UI.UIDataGridView dgvWarehouse;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
-        private FiledInputControl fiWarehouseName;
         private Sunny.UI.UIFlowLayoutPanel uiFlowLayoutPanel1;
         private Sunny.UI.UIButton btnDelete;
         private Sunny.UI.UIButton btnUpdate;
         private Sunny.UI.UIButton btnAdd;
         private Sunny.UI.UITitlePanel uiTitlePanel1;
-        private FiledInputControl filedInputControl1;
+        private FiledInputControl fiWarehouseName;
+        private FiledInputControl fiWarehouseNum;
     }
 }

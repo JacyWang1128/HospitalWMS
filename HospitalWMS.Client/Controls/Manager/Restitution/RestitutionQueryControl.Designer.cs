@@ -43,6 +43,7 @@ namespace HospitalWMS.Client.Controls.Manager.Restitution
             this.uiFlowLayoutPanel1 = new Sunny.UI.UIFlowLayoutPanel();
             this.btnClear = new Sunny.UI.UIButton();
             this.btnQuery = new Sunny.UI.UIButton();
+            this.uiButton1 = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApply)).BeginInit();
             this.uiTitlePanel1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
@@ -188,6 +189,7 @@ namespace HospitalWMS.Client.Controls.Manager.Restitution
             // 
             // uiFlowLayoutPanel1
             // 
+            this.uiFlowLayoutPanel1.Controls.Add(this.uiButton1);
             this.uiFlowLayoutPanel1.Controls.Add(this.btnClear);
             this.uiFlowLayoutPanel1.Controls.Add(this.btnQuery);
             this.uiFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -210,7 +212,7 @@ namespace HospitalWMS.Client.Controls.Manager.Restitution
             // 
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClear.Location = new System.Drawing.Point(71, 11);
+            this.btnClear.Location = new System.Drawing.Point(137, 9);
             this.btnClear.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(60, 30);
@@ -224,7 +226,7 @@ namespace HospitalWMS.Client.Controls.Manager.Restitution
             // 
             this.btnQuery.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuery.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQuery.Location = new System.Drawing.Point(5, 10);
+            this.btnQuery.Location = new System.Drawing.Point(71, 8);
             this.btnQuery.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(60, 30);
@@ -233,6 +235,20 @@ namespace HospitalWMS.Client.Controls.Manager.Restitution
             this.btnQuery.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnQuery.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
+            // 
+            // uiButton1
+            // 
+            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.Location = new System.Drawing.Point(5, 8);
+            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.Size = new System.Drawing.Size(60, 30);
+            this.uiButton1.TabIndex = 5;
+            this.uiButton1.Text = "审核";
+            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
             // RestitutionQueryControl
             // 
@@ -261,5 +277,6 @@ namespace HospitalWMS.Client.Controls.Manager.Restitution
         private Sunny.UI.UIButton btnClear;
         private Sunny.UI.UIButton btnQuery;
         private Sunny.UI.UITitlePanel uiTitlePanel1;
+        private Sunny.UI.UIButton uiButton1;
     }
 }

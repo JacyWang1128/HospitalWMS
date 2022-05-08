@@ -48,6 +48,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
             this.cbApplyResult = new Sunny.UI.UIComboBox();
             this.uiLabel5 = new Sunny.UI.UILabel();
             this.uiFlowLayoutPanel1 = new Sunny.UI.UIFlowLayoutPanel();
+            this.uiButton1 = new Sunny.UI.UIButton();
             this.btnClear = new Sunny.UI.UIButton();
             this.btnQuery = new Sunny.UI.UIButton();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
@@ -265,6 +266,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
             // 
             // uiFlowLayoutPanel1
             // 
+            this.uiFlowLayoutPanel1.Controls.Add(this.uiButton1);
             this.uiFlowLayoutPanel1.Controls.Add(this.btnClear);
             this.uiFlowLayoutPanel1.Controls.Add(this.btnQuery);
             this.uiFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -283,11 +285,25 @@ namespace HospitalWMS.Client.Controls.Purchaser
             this.uiFlowLayoutPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiFlowLayoutPanel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
+            // uiButton1
+            // 
+            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.Location = new System.Drawing.Point(5, 8);
+            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.Size = new System.Drawing.Size(60, 30);
+            this.uiButton1.TabIndex = 5;
+            this.uiButton1.Text = "审核";
+            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
+            // 
             // btnClear
             // 
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnClear.Location = new System.Drawing.Point(71, 11);
+            this.btnClear.Location = new System.Drawing.Point(137, 8);
             this.btnClear.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(60, 30);
@@ -301,7 +317,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
             // 
             this.btnQuery.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuery.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQuery.Location = new System.Drawing.Point(5, 10);
+            this.btnQuery.Location = new System.Drawing.Point(71, 8);
             this.btnQuery.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(60, 30);
@@ -361,5 +377,6 @@ namespace HospitalWMS.Client.Controls.Purchaser
         private Sunny.UI.UIButton btnClear;
         private Sunny.UI.UIButton btnQuery;
         private Sunny.UI.UIGroupBox uiGroupBox1;
+        private Sunny.UI.UIButton uiButton1;
     }
 }

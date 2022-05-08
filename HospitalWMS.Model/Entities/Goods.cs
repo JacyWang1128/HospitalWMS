@@ -11,6 +11,7 @@ namespace HospitalWMS.Model.Entities
     [SugarTable("goods")]
     public class Goods:EntityBase
     {
+        public string num { get; set; }
         public string name { get; set; }
         public string specification { get; set; }
         //[SugarColumn(IsIgnore = true)]

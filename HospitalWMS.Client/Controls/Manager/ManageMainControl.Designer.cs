@@ -71,9 +71,9 @@ namespace HospitalWMS.Client.Controls.Manager
             // uiTreeView1
             // 
             this.uiTreeView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiTreeView1.FillColor = System.Drawing.Color.RoyalBlue;
-            this.uiTreeView1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTreeView1.ForeColor = System.Drawing.Color.White;
+            this.uiTreeView1.FillColor = System.Drawing.Color.AliceBlue;
+            this.uiTreeView1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTreeView1.ForeColor = System.Drawing.Color.Black;
             this.uiTreeView1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiTreeView1.Location = new System.Drawing.Point(0, 0);
             this.uiTreeView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -81,26 +81,32 @@ namespace HospitalWMS.Client.Controls.Manager
             this.uiTreeView1.Name = "uiTreeView1";
             treeNode1.Name = "节点5";
             treeNode1.Text = "查询申领";
+            treeNode2.ForeColor = System.Drawing.Color.Teal;
             treeNode2.Name = "节点0";
             treeNode2.Text = "申领管理";
             treeNode3.Name = "节点7";
             treeNode3.Text = "查询退库";
+            treeNode4.ForeColor = System.Drawing.Color.Teal;
             treeNode4.Name = "节点1";
             treeNode4.Text = "退库管理";
             treeNode5.Name = "节点9";
             treeNode5.Text = "查询入库";
+            treeNode6.ForeColor = System.Drawing.Color.Teal;
             treeNode6.Name = "节点2";
             treeNode6.Text = "入库管理";
             treeNode7.Name = "节点12";
             treeNode7.Text = "查询出库";
+            treeNode8.ForeColor = System.Drawing.Color.Teal;
             treeNode8.Name = "节点3";
             treeNode8.Text = "出库管理";
             treeNode9.Name = "节点15";
             treeNode9.Text = "查看库存";
+            treeNode10.ForeColor = System.Drawing.Color.Teal;
             treeNode10.Name = "节点4";
             treeNode10.Text = "物资管理";
             treeNode11.Name = "节点1";
             treeNode11.Text = "修改个人信息";
+            treeNode12.ForeColor = System.Drawing.Color.Teal;
             treeNode12.Name = "节点0";
             treeNode12.Text = "个人信息";
             this.uiTreeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
