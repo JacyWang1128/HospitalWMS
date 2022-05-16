@@ -226,7 +226,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
             this.uiGroupBox1.Size = new System.Drawing.Size(1046, 242);
             this.uiGroupBox1.TabIndex = 16;
-            this.uiGroupBox1.Text = "入库物品";
+            this.uiGroupBox1.Text = "出库物品";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiGroupBox1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
