@@ -57,6 +57,7 @@ namespace HospitalWMS.Service
 
         public static void InsertDefaultUser()
         {
+            if(!db.Queryable<User>().Any(x=>x.username == "admin"))
             DAO.Insert(new User() { displayname = "系统管理员", username = "admin", password = "123456".ToSHA(), role = UserType.系统管理员 });
         }
 

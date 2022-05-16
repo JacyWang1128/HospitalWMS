@@ -13,7 +13,7 @@ namespace HospitalWMS.Tests
         static void Main(string[] args)
         {
             Service.Common.InitDatabase();
-            //Service.Common.InsertDefaultUser();
+            Service.Common.InsertDefaultUser();
             Console.WriteLine($"登录系统：{(Service.Common.Login("admin", "123456") ? "成功" : "失败")}");
             Console.ReadKey();
         }
