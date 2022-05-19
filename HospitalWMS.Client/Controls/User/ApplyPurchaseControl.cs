@@ -86,7 +86,7 @@ namespace HospitalWMS.Client.Controls.User
         {
             entity.uuid = ApplyUid;
             entity.result = Model.Enums.ApplyResult.未审批;
-            entity.applierid = Service.Common.currentUser.id;
+            entity.applierid = Runtime.Instance.CurrentUser.id;
             entity.applytime = DateTime.Now;
             return entity;
         }

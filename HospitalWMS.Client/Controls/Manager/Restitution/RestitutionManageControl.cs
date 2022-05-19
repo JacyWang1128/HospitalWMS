@@ -112,7 +112,7 @@ namespace HospitalWMS.Client.Controls.Manager.Restitution
             //    return;
             //}
             var id = ApplyId;//Convert.ToInt64(dgvApply.SelectedRows[0].Cells["编号"].Value);
-            if (Service.Business.ApproveApply<Model.Entities.Restitution>(id))
+            if (Service.Business.ApproveRestitution(id))
             {
                 var order_num = apply.uuid;//dgvApply.SelectedRows[0].Cells["单号"].Value.ToString();
                 var query = Service.Common.db.Queryable<RestitutionItem>()

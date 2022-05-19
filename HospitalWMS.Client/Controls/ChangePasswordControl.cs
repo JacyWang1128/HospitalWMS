@@ -20,13 +20,13 @@ namespace HospitalWMS.Client.Controls
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            if (fiOldpwd.Value.ToSHA() == Service.Common.currentUser.password)
+            if (fiOldpwd.Value.ToSHA() == Runtime.Instance.CurrentUser.password)
             {
                 if (fiNewpwd.Value == fiSubmitpwd.Value)
                 {
-                    if (fiNewpwd.Value.ToSHA() != Service.Common.currentUser.password)
+                    if (fiNewpwd.Value.ToSHA() != Runtime.Instance.CurrentUser.password)
                     {
-                        var entity = Service.Common.currentUser;
+                        var entity = Runtime.Instance.CurrentUser;
                         entity.password = fiNewpwd.Value.ToSHA();
                         Service.DAO.Update(entity);
                         MessageBox.Show("您已修改密码，请重新登陆！");

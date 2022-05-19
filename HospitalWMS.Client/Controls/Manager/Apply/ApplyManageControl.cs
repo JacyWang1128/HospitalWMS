@@ -131,7 +131,7 @@ namespace HospitalWMS.Client.Controls.Manager.Apply
                         var exwarehouse = new Model.Entities.ExWarehouse()
                         {
                             uuid = uuid,
-                            applierid = Runtime.Instance.currentUser.id,
+                            applierid = Runtime.Instance.CurrentUser.id,
                             orderid = apply.id,
                             applytime = DateTime.Now,
                             result = ApplyResult.未审批,
@@ -179,7 +179,7 @@ namespace HospitalWMS.Client.Controls.Manager.Apply
             //    return;
             //}
             var id = ApplyId;//Convert.ToInt64(dgvStock.SelectedRows[0].Cells["编号"].Value);
-            if (!Service.Business.RecallApply<Model.Entities.Apply>(id))
+            if (!Service.Business.RecallApply(id))
                 MessageBox.Show("撤回失败！");
             ManageMainControl.Instance.FreshUI(typeof(ApplyQueryControl));
         }

@@ -44,22 +44,22 @@ namespace HospitalWMS.Client.Controls.Purchaser
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
             this.dgvItem = new Sunny.UI.UIDataGridView();
-            this.uiPanel5 = new Sunny.UI.UIPanel();
-            this.cbApplyResult = new Sunny.UI.UIComboBox();
-            this.uiLabel5 = new Sunny.UI.UILabel();
             this.uiFlowLayoutPanel1 = new Sunny.UI.UIFlowLayoutPanel();
+            this.uiButton1 = new Sunny.UI.UIButton();
             this.btnClear = new Sunny.UI.UIButton();
             this.btnQuery = new Sunny.UI.UIButton();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
-            this.uiButton1 = new Sunny.UI.UIButton();
+            this.uiPanel5 = new Sunny.UI.UIPanel();
+            this.cbApplyResult = new Sunny.UI.UIComboBox();
+            this.uiLabel5 = new Sunny.UI.UILabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApply)).BeginInit();
             this.uiTitlePanel1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
-            this.uiPanel5.SuspendLayout();
             this.uiFlowLayoutPanel1.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
+            this.uiPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvApply
@@ -220,50 +220,6 @@ namespace HospitalWMS.Client.Controls.Purchaser
             this.dgvItem.TabIndex = 26;
             this.dgvItem.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // uiPanel5
-            // 
-            this.uiPanel5.Controls.Add(this.cbApplyResult);
-            this.uiPanel5.Controls.Add(this.uiLabel5);
-            this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiPanel5.Location = new System.Drawing.Point(9, 10);
-            this.uiPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel5.Name = "uiPanel5";
-            this.uiPanel5.Size = new System.Drawing.Size(343, 46);
-            this.uiPanel5.TabIndex = 24;
-            this.uiPanel5.Text = null;
-            this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiPanel5.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // cbApplyResult
-            // 
-            this.cbApplyResult.DataSource = null;
-            this.cbApplyResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbApplyResult.FillColor = System.Drawing.Color.White;
-            this.cbApplyResult.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cbApplyResult.Location = new System.Drawing.Point(100, 0);
-            this.cbApplyResult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbApplyResult.MinimumSize = new System.Drawing.Size(63, 0);
-            this.cbApplyResult.Name = "cbApplyResult";
-            this.cbApplyResult.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.cbApplyResult.Size = new System.Drawing.Size(243, 46);
-            this.cbApplyResult.TabIndex = 1;
-            this.cbApplyResult.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbApplyResult.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // uiLabel5
-            // 
-            this.uiLabel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uiLabel5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel5.Location = new System.Drawing.Point(0, 0);
-            this.uiLabel5.Name = "uiLabel5";
-            this.uiLabel5.Size = new System.Drawing.Size(100, 46);
-            this.uiLabel5.TabIndex = 0;
-            this.uiLabel5.Text = "审核结果";
-            this.uiLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiLabel5.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
             // uiFlowLayoutPanel1
             // 
             this.uiFlowLayoutPanel1.Controls.Add(this.uiButton1);
@@ -284,6 +240,20 @@ namespace HospitalWMS.Client.Controls.Purchaser
             this.uiFlowLayoutPanel1.Text = "uiFlowLayoutPanel1";
             this.uiFlowLayoutPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiFlowLayoutPanel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiButton1
+            // 
+            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.Location = new System.Drawing.Point(5, 7);
+            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.Size = new System.Drawing.Size(60, 30);
+            this.uiButton1.TabIndex = 6;
+            this.uiButton1.Text = "审核";
+            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
             // btnClear
             // 
@@ -330,19 +300,49 @@ namespace HospitalWMS.Client.Controls.Purchaser
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiGroupBox1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // uiButton1
+            // uiPanel5
             // 
-            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Location = new System.Drawing.Point(5, 7);
-            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(60, 30);
-            this.uiButton1.TabIndex = 6;
-            this.uiButton1.Text = "审核";
-            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
+            this.uiPanel5.Controls.Add(this.cbApplyResult);
+            this.uiPanel5.Controls.Add(this.uiLabel5);
+            this.uiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiPanel5.Location = new System.Drawing.Point(9, 10);
+            this.uiPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel5.Name = "uiPanel5";
+            this.uiPanel5.Size = new System.Drawing.Size(343, 46);
+            this.uiPanel5.TabIndex = 24;
+            this.uiPanel5.Text = null;
+            this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiPanel5.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // cbApplyResult
+            // 
+            this.cbApplyResult.DataSource = null;
+            this.cbApplyResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbApplyResult.FillColor = System.Drawing.Color.White;
+            this.cbApplyResult.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbApplyResult.Location = new System.Drawing.Point(100, 0);
+            this.cbApplyResult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbApplyResult.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cbApplyResult.Name = "cbApplyResult";
+            this.cbApplyResult.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.cbApplyResult.Size = new System.Drawing.Size(243, 46);
+            this.cbApplyResult.TabIndex = 1;
+            this.cbApplyResult.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbApplyResult.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiLabel5
+            // 
+            this.uiLabel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uiLabel5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel5.Location = new System.Drawing.Point(0, 0);
+            this.uiLabel5.Name = "uiLabel5";
+            this.uiLabel5.Size = new System.Drawing.Size(100, 46);
+            this.uiLabel5.TabIndex = 0;
+            this.uiLabel5.Text = "审核结果";
+            this.uiLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiLabel5.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // ApplyPurchaseQueryControl
             // 
@@ -356,9 +356,9 @@ namespace HospitalWMS.Client.Controls.Purchaser
             this.uiTableLayoutPanel1.ResumeLayout(false);
             this.uiGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
-            this.uiPanel5.ResumeLayout(false);
             this.uiFlowLayoutPanel1.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
+            this.uiPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,13 +370,13 @@ namespace HospitalWMS.Client.Controls.Purchaser
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
         private Sunny.UI.UIGroupBox uiGroupBox2;
         private Sunny.UI.UIDataGridView dgvItem;
-        private Sunny.UI.UIPanel uiPanel5;
-        private Sunny.UI.UIComboBox cbApplyResult;
-        private Sunny.UI.UILabel uiLabel5;
         private Sunny.UI.UIFlowLayoutPanel uiFlowLayoutPanel1;
         private Sunny.UI.UIButton btnClear;
         private Sunny.UI.UIButton btnQuery;
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UIButton uiButton1;
+        private Sunny.UI.UIPanel uiPanel5;
+        private Sunny.UI.UIComboBox cbApplyResult;
+        private Sunny.UI.UILabel uiLabel5;
     }
 }

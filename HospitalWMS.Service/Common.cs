@@ -13,14 +13,18 @@ namespace HospitalWMS.Service
 {
     public static class Common
     {
-        public static User currentUser = null;
         public static readonly string connectString = Helpers.ConfigHelper.ReadAppSetting("ConnectString");
+
+        private static User currentUser = null;
+
+        private static Plan currentMonthPlan = null;
+
         public static long GetCurrentUserID()
         {
-            if (currentUser == null)
+            if (CurrentUser == null)
                 return 0;
             else
-                return currentUser.id;
+                return CurrentUser.id;
         }
         public static SqlSugarClient db
         {
@@ -33,6 +37,35 @@ namespace HospitalWMS.Service
                     IsAutoCloseConnection = true
                 });
             }
+        }
+
+        public static User CurrentUser
+        {
+            get => currentUser; 
+            set
+            {
+                currentUser = value;
+                SetMonthPlan(CurrentUser.departmentid);
+            }
+        }
+
+        public static Plan CurrentMonthPlan { get => currentMonthPlan; set => currentMonthPlan = value; }
+
+        internal static void SetMonthPlan()
+        {
+            SetMonthPlan(CurrentUser.departmentid);
+        }
+
+        public static void SetMonthPlan(long deptid)
+        {
+            var query = db.Queryable<Plan>()
+                .Mapper(x => x.applier, x => x.applierid)
+                .Where(x => x.applytime.Month == DateTime.Now.Month && x.applytime.Year == DateTime.Now.Year && x.applier.departmentid == deptid)
+                .First();
+            if (query == null)
+                return;
+            query.items = db.Queryable<PlanItem>().Mapper(x => x.goods, x => x.goodsid).Mapper(x => x.warehouse, x => x.warehouseid).Where(x => x.applyid == query.uuid).ToList();
+            CurrentMonthPlan = query;
         }
 
         public static bool InitDatabase()
@@ -66,7 +99,7 @@ namespace HospitalWMS.Service
             var user = db.Queryable<User>().First(x => x.username == username && x.password == pwd.ToSHA());
             if (user == null)
                 return false;
-            currentUser = user;
+            CurrentUser = user;
             return true;
         }
 

@@ -73,7 +73,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
                     var order = new Model.Entities.Order()
                     {
                         uuid = uuid,
-                        applierid = Runtime.Instance.currentUser.id,
+                        applierid = Runtime.Instance.CurrentUser.id,
                         applyid = apply.id,
                         applytime = DateTime.Now,
                         result = ApplyResult.未审批,

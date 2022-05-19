@@ -43,7 +43,7 @@ namespace HospitalWMS.Client.Controls.Manager.Purchase
                 .Mapper(x => x.applier, x => x.applierid)
                 .Mapper(x => x.perchaser, x => x.purchaserid)
                 .Mapper(x => x.items, x => x.items.First().orderid)
-                .Where(x => x.applierid == Service.Common.currentUser.id).ToList()
+                .Where(x => x.applierid == Runtime.Instance.CurrentUser.id).ToList()
                 .Select(x => new { 编号 = x.id, 申请时间 = x.applytime, 申请人 = x.applier.displayname, 采购人 = x.perchaser == null?"":x.perchaser.displayname,采购结果=x.state.ToString(), 申请结果 = x.result.ToString() }).ToList();
             dgvOrder.DataSource = query;
             cbWarehouse.DataSource = Service.Common.db.Queryable<Model.Entities.Warehouse>().ToDataTable();
@@ -62,7 +62,7 @@ namespace HospitalWMS.Client.Controls.Manager.Purchase
             entity.uuid = OrderUid;
             entity.result = Model.Enums.ApplyResult.未审批;
             entity.state = Model.Enums.OrderState.未开始;
-            entity.applierid = Service.Common.currentUser.id;
+            entity.applierid = Runtime.Instance.CurrentUser.id;
             entity.applytime = DateTime.Now;
             return entity;
         }

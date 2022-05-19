@@ -106,7 +106,7 @@ namespace HospitalWMS.Client.Controls.Manager.Purchase
                 var imwarehouse = new Model.Entities.ImWarehouse()
                 {
                     uuid = uuid,
-                    applierid = Runtime.Instance.currentUser.id,
+                    applierid = Runtime.Instance.CurrentUser.id,
                     orderid = apply.id,
                     applytime = DateTime.Now,
                     result = ApplyResult.未审批,

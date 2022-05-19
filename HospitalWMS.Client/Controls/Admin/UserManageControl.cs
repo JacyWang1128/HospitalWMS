@@ -78,7 +78,7 @@ namespace HospitalWMS.Client.Controls.Admin
                     MessageBox.Show("请选择要更新的行！");
                     return;
                 }
-                if(Convert.ToInt64(dgvUser.SelectedRows[0].Cells["编号"].Value) == Service.Common.currentUser.id && fiPassword.Value.ToSHA() != Service.Common.currentUser.password)
+                if(Convert.ToInt64(dgvUser.SelectedRows[0].Cells["编号"].Value) == Runtime.Instance.CurrentUser.id && fiPassword.Value.ToSHA() != Runtime.Instance.CurrentUser.password)
                     isChangeSelfPassword = true;
                 var entity = Service.Common.db.Queryable<Model.Entities.User>().First(x => x.id == Convert.ToInt64(dgvUser.SelectedRows[0].Cells["编号"].Value));
                 var deptid = Service.Common.db.Queryable<Department>().First(x => x.name == cbxDept.SelectedValue.ToString()).id;

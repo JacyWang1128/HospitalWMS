@@ -11,11 +11,11 @@ namespace HospitalWMS.Runtime
 {
     public static class Instance
     {
-        public static User currentUser
+        public static User CurrentUser
         {
             get
             {
-                return Service.Common.currentUser;
+                return Service.Common.CurrentUser;
             }
         }
 

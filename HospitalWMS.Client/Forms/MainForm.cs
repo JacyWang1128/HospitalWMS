@@ -1,4 +1,5 @@
 ﻿using HospitalWMS.Client.Controls.Admin;
+using HospitalWMS.Client.Controls.DeptManager;
 using HospitalWMS.Client.Controls.Manager;
 using HospitalWMS.Client.Controls.Purchaser;
 using HospitalWMS.Client.Controls.User;
@@ -19,7 +20,7 @@ namespace HospitalWMS.Client.Forms
         public MainForm()
         {
             InitializeComponent();
-            switch (Service.Common.currentUser.role)
+            switch (Runtime.Instance.CurrentUser.role)
             {
                 case Model.Enums.UserType.系统管理员:
                     var control = new AdminMainControl() { Dock = DockStyle.Fill };
@@ -39,6 +40,11 @@ namespace HospitalWMS.Client.Forms
                     var control4 = new PurchaserMainControl() { Dock = DockStyle.Fill };
                     PurchaserMainControl.Instance = control4;
                     uiContent.Controls.Add(control4);
+                    break;
+                case Model.Enums.UserType.科室管理员:
+                    var control5 = new DeptManageMainControl() { Dock = DockStyle.Fill };
+                    DeptManageMainControl.Instance = control5;
+                    uiContent.Controls.Add(control5);
                     break;
                 default:
                     break;

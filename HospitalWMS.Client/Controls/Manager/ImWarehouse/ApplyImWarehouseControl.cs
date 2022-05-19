@@ -41,7 +41,7 @@ namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
                 .Mapper(x => x.applier, x => x.applierid)
                 .Mapper(x => x.approver, x => x.approverid)
                 .Mapper(x => x.items, x => x.items.First().applyid)
-                .Where(x => x.applierid == Service.Common.currentUser.id).ToList()
+                .Where(x => x.applierid == Runtime.Instance.CurrentUser.id).ToList()
                 .Select(x => new { 编号 = x.id, 申请时间 = x.applytime, 申请人 = x.applier.displayname, 审批人 = x.approver.displayname, 申请结果 = x.result.ToString() }).ToList();
             dgvImWarehouse.DataSource = query;
             cbWarehouse.DataSource = Service.Common.db.Queryable<Model.Entities.Warehouse>().ToDataTable();
@@ -59,7 +59,7 @@ namespace HospitalWMS.Client.Controls.Manager.ImWarehouse
         {
             entity.uuid = ImWarehouseUid;
             entity.result = Model.Enums.ApplyResult.未审批;
-            entity.applierid = Service.Common.currentUser.id;
+            entity.applierid = Runtime.Instance.CurrentUser.id;
             entity.applytime = DateTime.Now;
             return entity;
         }

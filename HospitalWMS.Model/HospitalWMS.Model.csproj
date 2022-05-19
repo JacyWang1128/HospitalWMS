@@ -58,6 +58,8 @@
     <Compile Include="Entities\ImWarehouseItem.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\OrderItem.cs" />
+    <Compile Include="Entities\Plan.cs" />
+    <Compile Include="Entities\PlanItem.cs" />
     <Compile Include="Entities\Restitution.cs" />
     <Compile Include="Entities\RestitutionItem.cs" />
     <Compile Include="Entities\Specification.cs" />

@@ -175,5 +175,10 @@ namespace HospitalWMS.Client.Controls.User
                 }
             }
         }
+
+        public void ClearWrap()
+        {
+            uiPanel1.Controls.Clear();
+        }
     }
 }

@@ -19,9 +19,9 @@ namespace HospitalWMS.Client.Controls
 
         private void UserInfoControl_Load(object sender, EventArgs e)
         {
-            if (Service.Common.currentUser == null)
+            if (Runtime.Instance.CurrentUser == null)
                 return;
-            uiLabel1.Text = $"尊敬的{Service.Common.currentUser.displayname??"用户"}欢迎您";
+            uiLabel1.Text = $"尊敬的{Runtime.Instance.CurrentUser.displayname??"用户"}欢迎您";
         }
 
         private void uiAvatar1_MouseDoubleClick(object sender, MouseEventArgs e)

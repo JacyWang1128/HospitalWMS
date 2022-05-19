@@ -90,6 +90,24 @@
     <Compile Include="Controls\ChangePasswordControl.Designer.cs">
       <DependentUpon>ChangePasswordControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DeptManager\ApplyPlanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DeptManager\ApplyPlanControl.Designer.cs">
+      <DependentUpon>ApplyPlanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DeptManager\DeptManageMainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DeptManager\DeptManageMainControl.Designer.cs">
+      <DependentUpon>DeptManageMainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DeptManager\PlanQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DeptManager\PlanQueryControl.Designer.cs">
+      <DependentUpon>PlanQueryControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FiledComboControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -203,6 +221,12 @@
     </Compile>
     <Compile Include="Controls\Manager\Supplier\SupplierManageControl.Designer.cs">
       <DependentUpon>SupplierManageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Purchaser\ApplyPlanManageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Purchaser\ApplyPlanManageControl.Designer.cs">
+      <DependentUpon>ApplyPlanManageControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Purchaser\ApplyPurchaseManageControl.cs">
       <SubType>UserControl</SubType>
@@ -321,6 +345,15 @@
     <EmbeddedResource Include="Controls\ChangePasswordControl.resx">
       <DependentUpon>ChangePasswordControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DeptManager\ApplyPlanControl.resx">
+      <DependentUpon>ApplyPlanControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DeptManager\DeptManageMainControl.resx">
+      <DependentUpon>DeptManageMainControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DeptManager\PlanQueryControl.resx">
+      <DependentUpon>PlanQueryControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FiledComboControl.resx">
       <DependentUpon>FiledComboControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Manager\Supplier\SupplierManageControl.resx">
       <DependentUpon>SupplierManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Purchaser\ApplyPlanManageControl.resx">
+      <DependentUpon>ApplyPlanManageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Purchaser\ApplyPurchaseManageControl.resx">
       <DependentUpon>ApplyPurchaseManageControl.cs</DependentUpon>
