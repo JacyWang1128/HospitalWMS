@@ -44,7 +44,7 @@ namespace HospitalWMS.Client.Controls.Manager.ExWarehouse
             //    .Where(x => x.applierid == Service.Common.currentUser.id).ToList()
             //    .Select(x => new { 编号 = x.id, 申请时间 = x.applytime, 申请人 = x.applier.displayname, 审批人 = x.approver == null?"":x.approver.displayname, 申请结果 = x.result.ToString() }).ToList();
             var applys = Service.Business.GetApplyList().Where(x => x.result == Model.Enums.ApplyResult.审核通过)
-                .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier == null ? "" : x.applier.displayname, 申请原因 = x.cause, 申请时间 = x.applytime, 审核人 = x.approver == null ? "" : x.approver.displayname, 审核结果 = x.result })
+                .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier == null ? "" : x.applier.username, 申请原因 = x.cause, 申请时间 = x.applytime, 审核人 = x.approver == null ? "" : x.approver.username, 审核结果 = x.result })
                 .ToList();
             dgvApply.DataSource = applys;
             cbWarehouse.DataSource = Service.Common.db.Queryable<Model.Entities.Warehouse>().ToDataTable();

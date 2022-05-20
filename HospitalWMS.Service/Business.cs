@@ -64,7 +64,7 @@ namespace HospitalWMS.Service
         }
         public static bool CheckPlan(List<ApplyItem> applyItems)
         {
-            bool ret = applyItems.Count == 0;
+            bool ret = applyItems.Count != 0;
             if (Common.CurrentMonthPlan == null && Common.CurrentMonthPlan.items.Count < 1)
                 return false;
             foreach (var item in applyItems)
@@ -250,9 +250,22 @@ namespace HospitalWMS.Service
                 }
             }
             if (ret)
-                ret = RecallApply<Restitution>(id);
+                ret = ApproveApply<Restitution>(id);
             Common.SetMonthPlan();
             return ret;
+        }
+
+        public static bool InsertGoods(Goods goods)
+        {
+            if (Common.db.Queryable<Goods>().Any(x => x.name == goods.name))
+                throw new ApplicationException("商品名称重复！");
+            return DAO.Insert(goods) == 1;
+        }
+        public static bool UpdateGoods(Goods goods)
+        {
+            if (Common.db.Queryable<Goods>().Any(x => x.name == goods.name))
+                throw new ApplicationException("商品名称重复！");
+            return DAO.Update(goods) == 1;
         }
 
         public static List<Apply> GetApplyList()

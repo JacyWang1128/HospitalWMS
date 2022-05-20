@@ -120,10 +120,11 @@ namespace HospitalWMS.Client.Controls.User
         }
         private Model.Entities.ApplyItem SetValue(Model.Entities.ApplyItem entity)
         {
+            var goods = cbGoods.SelectedItem as Goods;
             entity.applyid = ApplyUid;
             entity.count = Convert.ToInt32(fiNum.Value);
-            entity.goodsid = Convert.ToInt64((cbGoods.SelectedItem as DataRowView).Row["id"].ToString());
-            entity.goods = new Model.Entities.Goods() { name = (cbGoods.SelectedItem as DataRowView).Row["name"].ToString() };
+            entity.goodsid = goods.id;//Convert.ToInt64((cbGoods.SelectedItem as DataRowView).Row["id"].ToString());
+            entity.goods = goods;//new Model.Entities.Goods() { name = (cbGoods.SelectedItem as DataRowView).Row["name"].ToString() };
             entity.warehouseid = Convert.ToInt64((cbWarehouse.SelectedItem as DataRowView).Row["id"].ToString());
             entity.warehouse = new Warehouse() { name = (cbWarehouse.SelectedItem as DataRowView).Row["name"].ToString() };
             entity.sort = items.Count + 1;

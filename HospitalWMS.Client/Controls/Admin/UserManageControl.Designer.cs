@@ -50,6 +50,7 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.cbxRole = new Sunny.UI.UIComboBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
+            this.fiWorknum = new HospitalWMS.Client.Controls.FiledInputControl();
             this.uiTitlePanel1.SuspendLayout();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel2.SuspendLayout();
@@ -84,6 +85,7 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.uiTableLayoutPanel1.Controls.Add(this.fiWorknum, 2, 1);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel2, 1, 1);
             this.uiTableLayoutPanel1.Controls.Add(this.fiDisplayname, 2, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.fiPassword, 1, 0);
@@ -100,6 +102,7 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.uiTableLayoutPanel1.Size = new System.Drawing.Size(1064, 571);
             this.uiTableLayoutPanel1.TabIndex = 0;
             this.uiTableLayoutPanel1.TagString = null;
@@ -347,6 +350,19 @@ namespace HospitalWMS.Client.Controls.Admin
             this.uiLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.uiLabel1.Resize += new System.EventHandler(this.uiLabel1_Resize);
             // 
+            // fiWorknum
+            // 
+            this.fiWorknum.BackColor = System.Drawing.Color.Transparent;
+            this.fiWorknum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fiWorknum.Location = new System.Drawing.Point(715, 70);
+            this.fiWorknum.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.fiWorknum.Name = "fiWorknum";
+            this.fiWorknum.PwdCharacter = '\0';
+            this.fiWorknum.Size = new System.Drawing.Size(336, 38);
+            this.fiWorknum.TabIndex = 10;
+            this.fiWorknum.Title = "工号";
+            this.fiWorknum.Value = "";
+            // 
             // UserManageControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -382,5 +398,6 @@ namespace HospitalWMS.Client.Controls.Admin
         private Sunny.UI.UIButton btnDelete;
         private Sunny.UI.UIButton btnModify;
         private Sunny.UI.UIButton btnAdd;
+        private FiledInputControl fiWorknum;
     }
 }

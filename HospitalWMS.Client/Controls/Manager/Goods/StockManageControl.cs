@@ -61,23 +61,30 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
             }
             else
             {
-                var query = Service.Common.db.Queryable<Stock>()
-                       .Mapper(x => x.warehouse, x => x.warehouseid)
-                       .Mapper(x => x.goods, x => x.goodsid).ToList()
-                       .Select(x => new
-                       {
-                           编号 = x.id,
-                           仓库 = x.warehouse.name,
-                           物资 = x.goods.name,
-                           数量 = x.count,
-                           单位 = x.goods.unit,
+                try
+                {
+                    var query = Service.Common.db.Queryable<Stock>()
+                           .Mapper(x => x.warehouse, x => x.warehouseid)
+                           .Mapper(x => x.goods, x => x.goodsid).ToList()
+                           .Select(x => new
+                           {
+                               编号 = x.id,
+                               仓库 = x.warehouse.name,
+                               物资 = x.goods.name,
+                               数量 = x.count,
+                               单位 = x.goods.unit,
                            //规格 = x.goods.specification.name,
                            物资类型 = x.goods.goodstype.ToString(),
                            //供应商 = x.goods.supplier.name,
                            单价 = x.goods.price,
-                           总价 = (decimal)x.count * x.goods.price
-                       }).ToList();
-                dgvStock.DataSource = query;
+                               总价 = (decimal)x.count * x.goods.price
+                           }).ToList();
+                    dgvStock.DataSource = query;
+                }
+                catch (Exception)
+                {
+                    dgvStock.DataSource = null;
+                }
             }
         }
 

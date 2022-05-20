@@ -42,7 +42,7 @@ namespace HospitalWMS.Client.Controls.Manager
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("出库管理", new System.Windows.Forms.TreeNode[] {
             treeNode7});
             System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("查看库存");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("物资管理", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("库存管理", new System.Windows.Forms.TreeNode[] {
             treeNode9});
             System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("修改个人信息");
             System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("个人信息", new System.Windows.Forms.TreeNode[] {
@@ -103,7 +103,7 @@ namespace HospitalWMS.Client.Controls.Manager
             treeNode9.Text = "查看库存";
             treeNode10.ForeColor = System.Drawing.Color.Teal;
             treeNode10.Name = "节点4";
-            treeNode10.Text = "物资管理";
+            treeNode10.Text = "库存管理";
             treeNode11.Name = "节点1";
             treeNode11.Text = "修改个人信息";
             treeNode12.ForeColor = System.Drawing.Color.Teal;

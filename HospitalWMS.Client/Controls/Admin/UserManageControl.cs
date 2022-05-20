@@ -25,8 +25,9 @@ namespace HospitalWMS.Client.Controls.Admin
             var te = Service.Common.db.Queryable<Model.Entities.User>().ToList();
             //var temp = Service.Common.db.Queryable<User, Department>((u, d) => u.departmentid == d.id)
             //    .Select((u, d) => new { 编号 = u.id, 用户名 = u.username, 昵称 = u.displayname, 密码 = u.password, 角色 = u.role.ToString(), 部门 = d.name }).ToList();
-            var temp = Service.Common.db.Queryable<Model.Entities.User>().Mapper(x => x.department, x => x.departmentid).ToList().Select(u => new { 编号 = u.id, 用户名 = u.username, 昵称 = u.displayname, 密码 = u.password, 角色 = u.role.ToString(), 部门 = u.department == null?"":u.department.name }).ToList();
+            var temp = Service.Common.db.Queryable<Model.Entities.User>().Mapper(x => x.department, x => x.departmentid).ToList().Select(u => new { 编号 = u.id,工号 = u.worknum, 用户名 = u.username, 昵称 = u.displayname, 密码 = u.password, 角色 = u.role.ToString(), 部门 = u.department == null?"":u.department.name }).ToList();
             dgvUser.DataSource = temp;
+            dgvUser.Columns[0].Visible = false;
             cbxRole.DataSource = Enum.GetNames(typeof(UserType));
             cbxDept.DataSource = Service.Common.db.Queryable<Department>().Select(x => x.name).ToList();
         }
@@ -37,6 +38,11 @@ namespace HospitalWMS.Client.Controls.Admin
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(fiWorknum.Value))
+            {
+                MessageBox.Show("请输入工号！");
+                return;
+            }
             var deptid = Service.Common.db.Queryable<Department>().First(x => x.name == cbxDept.SelectedValue.ToString()).id;
             var role = cbxRole.SelectedIndex;
             var entity = new Model.Entities.User()
@@ -45,7 +51,8 @@ namespace HospitalWMS.Client.Controls.Admin
                 password = fiPassword.Value.ToSHA(),
                 departmentid = deptid,
                 displayname = fiDisplayname.Value,
-                role = (UserType)role
+                role = (UserType)role,
+                worknum = fiWorknum.Value
             };
             try
             {
@@ -78,7 +85,12 @@ namespace HospitalWMS.Client.Controls.Admin
                     MessageBox.Show("请选择要更新的行！");
                     return;
                 }
-                if(Convert.ToInt64(dgvUser.SelectedRows[0].Cells["编号"].Value) == Runtime.Instance.CurrentUser.id && fiPassword.Value.ToSHA() != Runtime.Instance.CurrentUser.password)
+                if (string.IsNullOrWhiteSpace(fiWorknum.Value))
+                {
+                    MessageBox.Show("请输入工号！");
+                    return;
+                }
+                if (Convert.ToInt64(dgvUser.SelectedRows[0].Cells["编号"].Value) == Runtime.Instance.CurrentUser.id && fiPassword.Value.ToSHA() != Runtime.Instance.CurrentUser.password)
                     isChangeSelfPassword = true;
                 var entity = Service.Common.db.Queryable<Model.Entities.User>().First(x => x.id == Convert.ToInt64(dgvUser.SelectedRows[0].Cells["编号"].Value));
                 var deptid = Service.Common.db.Queryable<Department>().First(x => x.name == cbxDept.SelectedValue.ToString()).id;
@@ -88,6 +100,7 @@ namespace HospitalWMS.Client.Controls.Admin
                 entity.departmentid = deptid;
                 entity.displayname = fiDisplayname.Value;
                 entity.role = (UserType)role;
+                entity.worknum = fiWorknum.Value;
                 Service.DAO.Update(entity);
                 if (isChangeSelfPassword)
                 {

@@ -1,4 +1,5 @@
-﻿using HospitalWMS.Client.Controls.Manager.Purchase;
+﻿using HospitalWMS.Client.Controls.DeptManager;
+using HospitalWMS.Client.Controls.Manager.Purchase;
 using HospitalWMS.Model;
 using System;
 using System.Collections.Generic;
@@ -72,11 +73,35 @@ namespace HospitalWMS.Client.Controls.Purchaser
             set => purchaseManageControl = value;
         }
 
+        public ApplyPlanManageControl ApplyPlanManageControl
+        {
+            get
+            {
+                if (applyPlanManageControl == null)
+                    applyPlanManageControl = new ApplyPlanManageControl();
+                return applyPlanManageControl;
+            }
+            set => applyPlanManageControl = value;
+        }
+
+        public PlanQueryControl PlanQueryControl
+        {
+            get
+            {
+                if (planQueryControl == null)
+                    planQueryControl = new PlanQueryControl();
+                return planQueryControl;
+            }
+            set => planQueryControl = value;
+        }
+
         private ChangePasswordControl changePasswordControl = null;
         private PurchaseQueryControl purchaseQueryControl = null;
         private ApplyPurchaseQueryControl applyPurchaseQueryControl = null;
         private ApplyPurchaseManageControl applyPurchaseManageControl = null;
         private PurchaseManageControl purchaseManageControl = null;
+        private ApplyPlanManageControl applyPlanManageControl = null;
+        private PlanQueryControl planQueryControl = null;
 
         public PurchaserMainControl()
         {
@@ -94,6 +119,9 @@ namespace HospitalWMS.Client.Controls.Purchaser
                         break;
                     case "查询采购":
                         FreshUI(PurchaseQueryControl);
+                        break;
+                    case "查询计划":
+                        FreshUI(PlanQueryControl);
                         break;
                     case "修改个人信息":
                         FreshUI(ChangePasswordControl);

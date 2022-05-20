@@ -60,7 +60,7 @@ namespace HospitalWMS.Service
         {
             var query = db.Queryable<Plan>()
                 .Mapper(x => x.applier, x => x.applierid)
-                .Where(x => x.applytime.Month == DateTime.Now.Month && x.applytime.Year == DateTime.Now.Year && x.applier.departmentid == deptid)
+                .Where(x => x.applytime.Month == DateTime.Now.Month && x.applytime.Year == DateTime.Now.Year && x.applier.departmentid == deptid && x.result == ApplyResult.审核通过)
                 .First();
             if (query == null)
                 return;

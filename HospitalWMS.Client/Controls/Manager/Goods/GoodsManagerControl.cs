@@ -58,11 +58,12 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
                 try
                 {
                     var entity = SetValue(new Model.Entities.Goods());
-                    Service.DAO.Insert(entity);
+                    Service.Business.InsertGoods(entity);
+                    //Service.DAO.Insert(entity);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("创建物资失败！");
+                    MessageBox.Show($"创建物资失败！{ex.Message??$"\r\n{ex.Message}！"}");
                 }
             }
             else
@@ -80,11 +81,12 @@ namespace HospitalWMS.Client.Controls.Manager.Goods
                     return;
                 }
                 var entity = SetValue(Service.Common.db.Queryable<Model.Entities.Goods>().First(x => x.id == Convert.ToInt64(dgvGoods.SelectedRows[0].Cells["编号"].Value)));
-                Service.DAO.Update(entity);
+                Service.Business.UpdateGoods(entity);
+                //Service.DAO.Update(entity);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("修改物资信息失败！");
+                MessageBox.Show($"修改物资信息失败！{ex.Message ?? $"\r\n{ex.Message}！"}");
             }
             FreshData();
         }

@@ -35,9 +35,12 @@ namespace HospitalWMS.Client.Controls.Purchaser
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("查询采购");
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("采购管理", new System.Windows.Forms.TreeNode[] {
             treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("修改个人信息");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("个人信息", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("查询计划");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("计划管理", new System.Windows.Forms.TreeNode[] {
             treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("修改个人信息");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("个人信息", new System.Windows.Forms.TreeNode[] {
+            treeNode7});
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiTreeView1 = new Sunny.UI.UITreeView();
             this.SuspendLayout();
@@ -78,14 +81,19 @@ namespace HospitalWMS.Client.Controls.Purchaser
             treeNode3.Text = "查询采购";
             treeNode4.Name = "节点0";
             treeNode4.Text = "采购管理";
-            treeNode5.Name = "节点1";
-            treeNode5.Text = "修改个人信息";
+            treeNode5.Name = "节点0";
+            treeNode5.Text = "查询计划";
             treeNode6.Name = "节点0";
-            treeNode6.Text = "个人信息";
+            treeNode6.Text = "计划管理";
+            treeNode7.Name = "节点1";
+            treeNode7.Text = "修改个人信息";
+            treeNode8.Name = "节点0";
+            treeNode8.Text = "个人信息";
             this.uiTreeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode2,
             treeNode4,
-            treeNode6});
+            treeNode6,
+            treeNode8});
             this.uiTreeView1.ShowPlusMinus = false;
             this.uiTreeView1.ShowText = false;
             this.uiTreeView1.Size = new System.Drawing.Size(129, 606);

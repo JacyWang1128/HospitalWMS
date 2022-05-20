@@ -20,6 +20,11 @@ namespace HospitalWMS.Client.Controls
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+            if(fiNewpwd.Value.Length > 12 || fiNewpwd.Value.Length < 6)
+            {
+                MessageBox.Show("密码长度应为6~12位！");
+                return;
+            }
             if (fiOldpwd.Value.ToSHA() == Runtime.Instance.CurrentUser.password)
             {
                 if (fiNewpwd.Value == fiSubmitpwd.Value)

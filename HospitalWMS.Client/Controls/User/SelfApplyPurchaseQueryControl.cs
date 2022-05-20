@@ -32,7 +32,7 @@ namespace HospitalWMS.Client.Controls.User
                 .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.approver, x => x.approverid).Where(x => x.applierid == Runtime.Instance.CurrentUser.id)
                 .ToList()
                 .Where(x => (cbApplyResult.SelectedItem == null ? true : x.result.ToString() == cbApplyResult.SelectedItem.ToString()))
-                .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier == null ? "" : x.applier.displayname,  申请时间 = x.applytime, 审核人 = x.approver == null ? "" : x.approver.displayname, 审核结果 = x.result })
+                .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier == null ? "" : x.applier.username,  申请时间 = x.applytime, 审核人 = x.approver == null ? "" : x.approver.username, 审核结果 = x.result })
                 .ToList();
                 dgvApply.DataSource = query;
             }
@@ -41,7 +41,7 @@ namespace HospitalWMS.Client.Controls.User
                 var query = Service.Common.db.Queryable<Model.Entities.ApplyOrder>()
                 .Mapper(x => x.applier, x => x.applierid).Mapper(x => x.approver, x => x.approverid).Where(x => x.applierid == Runtime.Instance.CurrentUser.id)
                 .ToList()
-                .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier == null ? "" : x.applier.displayname,  申请时间 = x.applytime, 审核人 = x.approver == null ? "" : x.approver.displayname, 审核结果 = x.result })
+                .Select(x => new { 编号 = x.id, 单号 = x.uuid, 申请人 = x.applier == null ? "" : x.applier.username,  申请时间 = x.applytime, 审核人 = x.approver == null ? "" : x.approver.username, 审核结果 = x.result })
                 .ToList();
                 dgvApply.DataSource = query;
             }

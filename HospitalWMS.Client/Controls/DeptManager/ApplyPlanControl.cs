@@ -18,6 +18,7 @@ namespace HospitalWMS.Client.Controls.DeptManager
         {
             InitializeComponent();
         }
+        private bool isModify = false;
         private string ApplyUid = string.Empty;
         private List<PlanItem> items = null;
 
