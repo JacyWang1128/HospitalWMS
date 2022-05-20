@@ -12,6 +12,7 @@ namespace HospitalWMS.Model.Enums
         申领员 = 1,
         仓库管理员 = 2,
         采购人员 = 3,
-        科室管理员 = 4
+        科室管理员 = 4,
+        护士长 = 5
     }
 }

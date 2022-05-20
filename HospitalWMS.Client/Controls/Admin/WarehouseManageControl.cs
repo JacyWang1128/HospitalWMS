@@ -36,12 +36,12 @@ namespace HospitalWMS.Client.Controls.Admin
                 MessageBox.Show("请输入仓库编号！");
                 return;
             }
-            if (Service.Common.db.Queryable<Department>().Any(x => x.num == fiWarehouseNum.Value))
+            if (Service.Common.db.Queryable<Warehouse>().Any(x => x.num == fiWarehouseNum.Value))
             {
                 MessageBox.Show("请勿添加重复仓库编号！");
                 return;
             }
-            if (Service.Common.db.Queryable<Department>().Any(x => x.name == fiWarehouseName.Value))
+            if (Service.Common.db.Queryable<Warehouse>().Any(x => x.name == fiWarehouseName.Value))
             {
                 MessageBox.Show("请勿添加重复仓库名称！");
                 return;
@@ -69,12 +69,12 @@ namespace HospitalWMS.Client.Controls.Admin
                 return;
             }
             var entity = Service.Common.db.Queryable<Warehouse>().First(x => x.id == Convert.ToInt64(dgvWarehouse.SelectedRows[0].Cells["编号"].Value));
-            if (Service.Common.db.Queryable<Department>().Any(x => x.id != entity.id && x.num == fiWarehouseNum.Value))
+            if (Service.Common.db.Queryable<Warehouse>().Any(x => x.id != entity.id && x.num == fiWarehouseNum.Value))
             {
                 MessageBox.Show("仓库编号重复！");
                 return;
             }
-            if (Service.Common.db.Queryable<Department>().Any(x => x.id != entity.id && x.name == fiWarehouseName.Value))
+            if (Service.Common.db.Queryable<Warehouse>().Any(x => x.id != entity.id && x.name == fiWarehouseName.Value))
             {
                 MessageBox.Show("仓库名称重复！");
                 return;

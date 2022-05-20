@@ -46,6 +46,8 @@ namespace HospitalWMS.Client.Forms
                     DeptManageMainControl.Instance = control5;
                     uiContent.Controls.Add(control5);
                     break;
+                case Model.Enums.UserType.护士长:
+                    break;
                 default:
                     break;
             }

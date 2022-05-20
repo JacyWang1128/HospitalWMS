@@ -222,6 +222,12 @@
     <Compile Include="Controls\Manager\Supplier\SupplierManageControl.Designer.cs">
       <DependentUpon>SupplierManageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Matron\MatronMainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Matron\MatronMainControl.Designer.cs">
+      <DependentUpon>MatronMainControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Purchaser\ApplyPlanManageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -410,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Manager\Supplier\SupplierManageControl.resx">
       <DependentUpon>SupplierManageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Matron\MatronMainControl.resx">
+      <DependentUpon>MatronMainControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Purchaser\ApplyPlanManageControl.resx">
       <DependentUpon>ApplyPlanManageControl.cs</DependentUpon>
