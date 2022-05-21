@@ -51,7 +51,7 @@ namespace HospitalWMS.Service
 
         public static Plan CurrentMonthPlan { get => currentMonthPlan; set => currentMonthPlan = value; }
 
-        internal static void SetMonthPlan()
+        public static void SetMonthPlan()
         {
             SetMonthPlan(CurrentUser.departmentid);
         }

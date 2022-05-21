@@ -263,7 +263,7 @@ namespace HospitalWMS.Service
         }
         public static bool UpdateGoods(Goods goods)
         {
-            if (Common.db.Queryable<Goods>().Any(x => x.name == goods.name))
+            if (Common.db.Queryable<Goods>().Any(x => x.name == goods.name && x.id != goods.id))
                 throw new ApplicationException("商品名称重复！");
             return DAO.Update(goods) == 1;
         }

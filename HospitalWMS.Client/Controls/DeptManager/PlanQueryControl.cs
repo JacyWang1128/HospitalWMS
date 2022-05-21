@@ -121,6 +121,7 @@ namespace HospitalWMS.Client.Controls.DeptManager
                 Service.Common.db.Deleteable<Plan>().Where(x => x.id == applyid).ExecuteCommand();
                 //PurchaserMainControl.Instance.SkipUI(typeof(ApplyPlanManageControl), new Model.EntityBase() { id = applyid });
                 FreshData();
+                Service.Common.SetMonthPlan();
             }
             else
             {
