@@ -1,4 +1,5 @@
-﻿using HospitalWMS.Client.Controls.Purchaser;
+﻿using HospitalWMS.Client.Controls.Matron;
+using HospitalWMS.Client.Controls.Purchaser;
 using HospitalWMS.Model.Entities;
 using HospitalWMS.Model.Enums;
 using System;
@@ -75,7 +76,7 @@ namespace HospitalWMS.Client.Controls.DeptManager
             if ((ApplyResult)dgvApply.Rows[dgvApply.SelectedRows[0].Index].Cells["审核结果"].Value == ApplyResult.未审批)
             {
                 var applyid = Convert.ToInt64(dgvApply.Rows[dgvApply.SelectedRows[0].Index].Cells["编号"].Value);
-                PurchaserMainControl.Instance.SkipUI(typeof(ApplyPlanManageControl), new Model.EntityBase() { id = applyid });
+                MatronMainControl.Instance.SkipUI(typeof(ApplyPlanManageControl), new Model.EntityBase() { id = applyid });
             }
             else
             {

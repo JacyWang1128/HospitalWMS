@@ -1,6 +1,7 @@
 ﻿using HospitalWMS.Client.Controls.Admin;
 using HospitalWMS.Client.Controls.DeptManager;
 using HospitalWMS.Client.Controls.Manager;
+using HospitalWMS.Client.Controls.Matron;
 using HospitalWMS.Client.Controls.Purchaser;
 using HospitalWMS.Client.Controls.User;
 using System;
@@ -47,6 +48,9 @@ namespace HospitalWMS.Client.Forms
                     uiContent.Controls.Add(control5);
                     break;
                 case Model.Enums.UserType.护士长:
+                    var control6 = new MatronMainControl() { Dock = DockStyle.Fill };
+                    MatronMainControl.Instance = control6;
+                    uiContent.Controls.Add(control6);
                     break;
                 default:
                     break;

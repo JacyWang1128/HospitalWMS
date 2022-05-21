@@ -1,4 +1,5 @@
-﻿using HospitalWMS.Model.Entities;
+﻿using HospitalWMS.Client.Controls.Matron;
+using HospitalWMS.Model.Entities;
 using HospitalWMS.Model.Enums;
 using System;
 using System.Collections.Generic;
@@ -79,7 +80,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
         {
             if ((ApplyResult)dgvApply.Rows[e.RowIndex].Cells["审核结果"].Value == ApplyResult.未审批)
             {
-                PurchaserMainControl.Instance.SkipUI(typeof(ApplyPurchaseManageControl), new Model.EntityBase() { id = (long)dgvApply.Rows[e.RowIndex].Cells["编号"].Value });
+                MatronMainControl.Instance.SkipUI(typeof(ApplyPurchaseManageControl), new Model.EntityBase() { id = (long)dgvApply.Rows[e.RowIndex].Cells["编号"].Value });
             }
             else
             {
@@ -96,7 +97,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
             }
             if ((ApplyResult)dgvApply.Rows[dgvApply.SelectedRows[0].Index].Cells["审核结果"].Value == ApplyResult.未审批)
             {
-                PurchaserMainControl.Instance.SkipUI(typeof(ApplyPurchaseManageControl), new Model.EntityBase() { id = (long)dgvApply.Rows[dgvApply.SelectedRows[0].Index].Cells["编号"].Value });
+                MatronMainControl.Instance.SkipUI(typeof(ApplyPurchaseManageControl), new Model.EntityBase() { id = (long)dgvApply.Rows[dgvApply.SelectedRows[0].Index].Cells["编号"].Value });
             }
             else
             {

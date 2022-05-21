@@ -1,4 +1,5 @@
 ﻿using HospitalWMS.Client.Controls.DeptManager;
+using HospitalWMS.Client.Controls.Matron;
 using HospitalWMS.Model;
 using HospitalWMS.Model.Entities;
 using System;
@@ -58,7 +59,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
             {
                 if (Service.Business.ApproveApply<Model.Entities.Plan>(id))
                 {
-                    PurchaserMainControl.Instance.FreshUI(typeof(PlanQueryControl));
+                    MatronMainControl.Instance.FreshUI(typeof(PlanQueryControl));
                 }
                 else
                     MessageBox.Show("批准失败！");
@@ -86,7 +87,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
             var id = ApplyId;//Convert.ToInt64(dgvStock.SelectedRows[0].Cells["编号"].Value);
             if (!Service.Business.RecallApply<Model.Entities.Plan>(id))
                 MessageBox.Show("撤回失败！");
-            PurchaserMainControl.Instance.FreshUI(typeof(PlanQueryControl));
+            MatronMainControl.Instance.FreshUI(typeof(PlanQueryControl));
         }
     }
 }
