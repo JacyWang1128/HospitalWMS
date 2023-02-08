@@ -1,4 +1,5 @@
-﻿using HospitalWMS.Model;
+﻿using HospitalWMS.Client.Controls.Matron;
+using HospitalWMS.Model;
 using HospitalWMS.Model.Entities;
 using HospitalWMS.Model.Enums;
 using SqlSugar;
@@ -92,7 +93,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
                     }
                     Service.DAO.Insert(order);
                     Service.DAO.Insert(orderItems.ToArray());
-                    PurchaserMainControl.Instance.FreshUI(typeof(ApplyPurchaseQueryControl));
+                    MatronMainControl.Instance.FreshUI(typeof(ApplyPurchaseQueryControl));
                 }
                 else
                     MessageBox.Show("批准失败！");
@@ -108,7 +109,7 @@ namespace HospitalWMS.Client.Controls.Purchaser
             var id = ApplyId;
             if (!Service.Business.RecallApply<Model.Entities.ApplyOrder>(id))
                 MessageBox.Show("撤回失败！");
-            PurchaserMainControl.Instance.FreshUI(typeof(ApplyPurchaseQueryControl));
+            MatronMainControl.Instance.FreshUI(typeof(ApplyPurchaseQueryControl));
         }
     }
 }
